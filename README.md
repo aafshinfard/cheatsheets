@@ -9,4 +9,4 @@ Including (soon):
 - Rstudio
 - Matlab
 
-Commits are WELCOME.
+Commits are WELCOM :)
