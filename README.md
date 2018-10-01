@@ -6,7 +6,7 @@ Including (soon):
 - Github
 - Python
 - C++
-- Rstudio
+- R\Rstudio
 - Matlab
 
 Commits are WELCOM :)
