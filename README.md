@@ -1,10 +1,11 @@
 # cheatsheets
 
-A repository for summarized programming examples as (1) starter (2) reminder.
+A repository for (a) summarized programming examples and (b) tools/toolbox usage. They are aimed to be trigger for starters as well as reminder for old users.
 
-Including (soon):
+Programming Languages Including (soon):
 - Github
 - Python
+-* numpy
 - C++
 - R\Rstudio
 - Matlab
