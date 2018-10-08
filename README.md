@@ -5,7 +5,7 @@ A repository for (a) summarized programming examples and (b) tools/toolbox usage
 Programming Languages Including (soon):
 - Github
 - Python
--* numpy
+- # numpy
 - C++
 - R\Rstudio
 - Matlab
