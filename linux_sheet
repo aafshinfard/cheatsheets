@@ -1,0 +1,19 @@
+## Linux cheatsheet by Amirosen (Amirhossein Afshinfard)
+## This document is being updated and is not organised in a clean/rationale order
+
+######################################################
+## Beginner:
+
+
+######################################################
+## Advanced:
+
+# piping:
+# something | something
+# Example: cat largeTextFile.txt | less
+
+# less command:
+
+
+
+# awk command
