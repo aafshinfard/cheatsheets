@@ -9,8 +9,10 @@
 ## Advanced:
 
 # piping:
-# something | something
+# something | something |
 # Example: cat largeTextFile.txt | less
+# ... gunzip -c /projects/btl/x/data/10x/R1.fastq.gz | head -n 10000 | tail -n 20 | awk '{print length}'
+# 
 
 # less command:
 
