@@ -3,16 +3,36 @@
 
 ######################################################
 ## Beginner:
+cd /
+cd ..
+touch XYZ.FORMAT
+gedit XYZ.FORMAT
+mkdir
+rmdir
+rm -r
+
+ls
+ls -lrh
+wc -l
 
 
 ######################################################
 ## Advanced:
 
 # piping:
-# something | something |
-# Example: cat largeTextFile.txt | less
-# ... gunzip -c /projects/btl/x/data/10x/R1.fastq.gz | head -n 10000 | tail -n 20 | awk '{print length}'
-# 
+XYZ | YZX | ZXY
+	cat largeTextFile.txt | less
+	gunzip -c /projects/btl/x/data/10x/R1.fastq.gz | head -n 10000 | tail -n 20 | awk '{print length}'
+
+# Running programs in the background from terminal
+setsid XYZ
+	setsid gedit cheatsheets/linux_sheet
+	setsid java -jar ./ABySS-explorer.jar
+XYZ & disown
+	java -jar ./ABySS-explorer.jar & disown
+(XYZ &)
+	(java -jar ./ABySS-explorer.jar &)
+
 
 # less command:
 
