@@ -1,0 +1,56 @@
+## Linux cheatsheet by Amirosen (Amirhossein Afshinfard)
+## This document is being updated and is not organised in a clean/rationale order
+
+######################################################
+#### Beginner:
+cd /
+cd ..
+touch XYZ.FORMAT
+gedit XYZ.FORMAT
+mkdir
+rmdir
+rm -r
+
+ls
+ls -lrh
+wc -l
+
+
+######################################################
+#### Advanced:
+
+### piping:
+XYZ | YZX | ZXY
+	cat largeTextFile.txt | less
+	gunzip -c /projects/btl/x/data/10x/R1.fastq.gz | head -n 10000 | tail -n 20 | awk '{print length}'
+
+### Running programs in the background from terminal
+setsid XYZ
+	setsid gedit cheatsheets/linux_sheet
+	setsid java -jar ./ABySS-explorer.jar
+XYZ & disown
+	java -jar ./ABySS-explorer.jar & disown
+(XYZ &)
+	(java -jar ./ABySS-explorer.jar &)
+
+
+### less command:
+
+
+
+### awk command
+
+
+### ssh (to become connected to a server/node)
+ssh NAME_OF_THE_SERVER
+	ssh genesis
+## Run and leave ssh
+# https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session
+# Answer: tmux (which is superior to screen):
+# ssh into machine then:
+tmux
+# then run the command inside started session i ntmux
+# leave by typing ctrl+b and then d
+tmux attach
+# for running multiple tasks, check the askubuntu ticket again and read the complete answer
+
