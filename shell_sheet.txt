@@ -1,0 +1,28 @@
+########################
+########################
+
+######### Starter:
+## Find the current active shell and (if bash) its path: 
+ps | grep $$
+which bash #if bash
+
+## First line of a shell script:
+#!(active shell path resulted from the commands above, )
+example: #!/usr/bin/bash
+
+
+
+
+
+######### shell scripts:
+
+# print
+echo 'Hello, world!'
+
+# Variables:
+PRICE_PER_APPLE=5
+MyFirstLetters=ABC
+greeting='Hello        world!'
+echo "The price of an Apple today is: \$HK $PRICE_PER_APPLE"
+echo "The first 10 letters in the alphabet are: ${MyFirstLetters}DEFGHIJ"
+echo $greeting" now with spaces: $greeting"
