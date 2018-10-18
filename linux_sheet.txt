@@ -39,12 +39,13 @@ XYZ & disown
 
 
 ### awk command
-
+# awk {'print length'}
+# row editing/filtering: https://www.tim-dennis.com/data/tech/2016/08/09/using-awk-filter-rows.html
 
 ### ssh (to become connected to a server/node)
 ssh NAME_OF_THE_SERVER
 	ssh genesis
-## Run and leave ssh
+## Run command and leave ssh
 # https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session
 # Answer: tmux (which is superior to screen):
 # ssh into machine then:

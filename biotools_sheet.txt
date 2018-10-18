@@ -1,0 +1,20 @@
+## Amirhossein Afshinfard
+_________________________________
+### BWA
+
+# BWA MEM
+
+_________________________________
+### ABySS
+
+
+
+_________________________________
+### Samtools
+#
+samtools view -b |			# convert to bam
+samtools view -u |			# convert to uncompressed bam
+samtools sort -@8 -o			# sort a bam file in parallel and then output to ...
+samtools -c output.bam 			#number of reads in bam file
+samtools -c -F unicode output.bam 	# number of reads with a specific flag in bam file 
+samtools -c -F 260 output.bam 		#number of MAPPED reads in bam file
