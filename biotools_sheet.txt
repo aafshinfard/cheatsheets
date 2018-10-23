@@ -8,6 +8,18 @@ _________________________________
 ### ABySS
 
 
+_________________________________
+### ntHits and ntCard
+
+nthits -k32 -j8 /projects/btl_scratch/lcoombe/barcode-assemblies/unitig-graph/celegans/LRSIM-noVariantData/data/barcoded_reformatted.fastq.gz
+ntcard -k32 -p freq /projects/btl_scratch/lcoombe/barcode-assemblies/unitig-graph/celegans/LRSIM-noVariantData/data/barcoded_reformatted.fastq.gz
+
+ntcard -k32 -p freq /projects/btl_scratch/sjackman/physlr/HYN5VCCXX_4cp.fq.gz
+
+
+# export PATH=/home/hmohamadi/ntCard/:$PATH
+# export PATH=/home/hmohamadi/ntHits/:$PATH
+# source /home/hmohamadi/.e7_env
 
 _________________________________
 ### Samtools

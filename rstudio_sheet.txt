@@ -1,0 +1,12 @@
+# Amirhossein Afshinfard
+
+
+
+
+
+
+## ggplot2 
+# a nice online cheatsheet is available here:
+# https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf
+# but simple commands are:
+
