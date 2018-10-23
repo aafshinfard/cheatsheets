@@ -1,9 +1,20 @@
 # Amirhossein Afshinfard
 
+___________________________________
+### Install packages:
+source("http://bioconductor.org/biocLite.R")
+biocLite("PACKAGE_NAME")
+# you may run into dependency error, recursivly keep installing all depencies.
+
+___________________________________
+### reading data into R:
+# a summarized cheatsheet:
+# https://rstudio-pubs-static.s3.amazonaws.com/1776_dbaebbdbde8d46e693e5cb60c768ba92.html
+read.csv()
 
 
-
-
+___________________________________
+### - Visualization
 
 ## ggplot2 
 # a nice online cheatsheet is available here:
