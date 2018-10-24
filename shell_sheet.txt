@@ -3,26 +3,70 @@
 
 ######### Starter:
 ## Find the current active shell and (if bash) its path: 
-ps | grep $$
-which bash #if bash
+	ps | grep $$
+	which bash #if bash
 
 ## First line of a shell script:
 #!(active shell path resulted from the commands above, )
-example: #!/usr/bin/bash
-
-
-
+	example: #!/usr/bin/bash
 
 
 ######### shell scripts:
 
 # print
-echo 'Hello, world!'
+	echo 'Hello, world!'
 
-# Variables:
-PRICE_PER_APPLE=5
-MyFirstLetters=ABC
-greeting='Hello        world!'
-echo "The price of an Apple today is: \$HK $PRICE_PER_APPLE"
-echo "The first 10 letters in the alphabet are: ${MyFirstLetters}DEFGHIJ"
-echo $greeting" now with spaces: $greeting"
+### Variables:
+	PRICE_PER_APPLE=5
+	MyFirstLetters=ABC
+	greeting='Hello        world!'
+# using \ for symbols like $
+	echo "The price of an Apple today is: \$HK $PRICE_PER_APPLE"
+# enacapsulating with {}
+	echo "The first 10 letters in the alphabet are: ${MyFirstLetters}DEFGHIJ"
+# enacapsulating with "
+	echo $greeting" now with spaces: $greeting"
+
+### if-else
+	a = 100
+	if [ $a == 100 ] ; then
+	    echo "if st."
+	else
+	    echo "else st."
+	fi
+
+### passing arguments to the script
+# Simply pass the arguments to your script by writing them in space delimited format.
+# Ex: ./SCRPTNAME.sh ARG1 ARG2 ARG3
+# and use them by calling $1, $2, etc...
+# $@ collect the number of arguments received in a run
+
+### Arrays: indexing starts at 0
+# init and change:
+	array_name =(apple banana "Fruit Basket" orange)
+	new_array[2]=apricot
+# to access the length of an array:
+	${#array_name[@]}
+# use them:
+	echo ${my_Zarray[3]} 
+	echo ${my_array[${#my_array[@]}-1]} 
+
+
+# For on arrays
+	a=(3 5 8 10 6) 
+	b=(6 5 4 12) 
+	c=(14 7 5 7)
+	#comparison of first two arrays a and b
+	for x in "${a[@]}"; do 
+	  in=false 
+	  for y in "${b[@]}"; do 
+	    if [ $x = $y ];then 
+	      # assigning the matching results to new array z
+	      z[${#z[@]}]=$x
+	    fi
+	  done 
+	done
+
+
+
+

@@ -7,12 +7,12 @@ hist1 =
 head1
 head(hist1)
 
-head2 =
-  read.table("PATH/TO/FILE2.hist", sep = "\t", nrows = 2,header = FALSE)
-hist2 = 
-  read.table("PATH/TO/FILE2.hist", sep = "\t", skip = 2, header = FALSE)
-head2
-head(hist2)
+# head2 =
+#   read.table("PATH/TO/FILE2.hist", sep = "\t", nrows = 2,header = FALSE)
+# hist2 = 
+#   read.table("PATH/TO/FILE2.hist", sep = "\t", skip = 2, header = FALSE)
+# head2
+# head(hist2)
 
 # Vis
 ggplot(data = hist10M, aes(x = V1)) +
