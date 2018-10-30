@@ -28,7 +28,7 @@ Initial Steps
 Basics
 ======
 
-# Create a new repo
+##### Create a new repo
 cd/dir to a specific directory and use the command below to init a new repository. The name will be the same as the directory's name in which you are running the command.
 	
 ```bash
@@ -36,22 +36,25 @@ cd/dir to a specific directory and use the command below to init a new repositor
 ```
 
 
-# Add a new file
+##### Add a new file
 choose a filename and a file format and use the command below:
 ```bash
 	touch "filename"."format" (x.txt or y.py)
 ```bash
 
-	# check which files git knows exist
-	git status
 
-	#!! What are commits:
-	# Commits are checkpoints! they make up the essence of your project and
-	# allow you to go back to the state of a project at any point.
-	# to group changes to a commit you need to  first add (both added
-	# files and midified ones) and then commit:
+##### check which files git knows exist
 	
-	# LOCAL add: add your changes to your LOCAL repo
+git status
+
+!! What are commits:
+
+Commits are checkpoints! they make up the essence of your project and
+allow you to go back to the state of a project at any point.
+to group changes to a commit you need to  first add (both added
+files and midified ones) and then commit:
+	
+##### LOCAL add: add your changes to your LOCAL repo
 	git add .
 	# Or to add some changes only:
 	git add "filename" "filename"
