@@ -26,7 +26,7 @@ Basics
 ======
 
 # Create a new repo
-	cd/dir to a specific directory and use the command below to init a new repository. The name will be the same as the directory's name in which you are running the command.
+cd/dir to a specific directory and use the command below to init a new repository. The name will be the same as the directory's name in which you are running the command.
 	
 ```bash
 > git init
