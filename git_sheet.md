@@ -6,7 +6,7 @@ Contents
 ========
 
 * [Quick Start](#quick-start)
-* [Initial Steps](#Initial Steps:)
+* [Initial Steps](#initial-steps)
 	* [](#install)
 * [Basics:](#dependencies)
 * [Basics:](#compiling-abyss-from-github)
