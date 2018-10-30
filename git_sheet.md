@@ -6,7 +6,7 @@ Contents
 ========
 
 * [Quick Start](#quick-start)
-* [Initial Steps:](#Initial Steps:)
+* [Initial Steps](#Initial Steps:)
 	* [](#install)
 * [Basics:](#dependencies)
 * [Basics:](#compiling-abyss-from-github)
@@ -14,7 +14,7 @@ Contents
 Quick Start
 ===========
 
-Initial Steps:
+Initial Steps
 ==============
 * Sign up for a github account
 * Install the git on your system
