@@ -7,7 +7,8 @@ Contents
 
 * [Initial Steps](#initial-steps)
 * [Basics](#basics)
-* [Contributing to other's projects](#contributing-to-others-projects)
+* [Contributing to Other's Projects](#contributing-to-others-projects)
+* [Bonus and Extra Tricks](#bonus-and-extra-tricks)
 
 
 Initial Steps
@@ -96,7 +97,8 @@ Contributing to others projects
 	git push "remote-name to that repo"(upstream) "your branch"(master)
 
 
-## extra trick:
+Bonus and Extra Tricks
+======================
 
 	# Change commit comments:
 	git commit --amend #then change the file which opens just after running the code
