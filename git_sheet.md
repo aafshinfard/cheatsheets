@@ -1,4 +1,5 @@
-## Cheatsheet for Github by Amirhossein, aafshinfard@bcgsc.ca
+## Cheatsheet for Github
+by Amirhossein, aafshinfard@bcgsc.ca
 
 
 ## Initial Steps:
