@@ -8,7 +8,7 @@ Contents
 * [Initial Steps](#initial-steps)
 	* [](#install)
 * [Basics](#basics)
-* [Contributing to other's projects](#contributing-to-other's-projects)
+* [Contributing to other's projects](#contributing-to-others-projects)
 
 
 Initial Steps
@@ -78,7 +78,7 @@ Basics
 	git remote -v
 	
 
-Contributing to other's projects
+Contributing to others projects
 ================================
 	# first fork from their repo, clone your fork, submit the changes, then:
 
