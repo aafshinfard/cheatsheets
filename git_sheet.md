@@ -5,14 +5,11 @@ by Amirhossein, aafshinfard@bcgsc.ca
 Contents
 ========
 
-* [Quick Start](#quick-start)
 * [Initial Steps](#initial-steps)
 	* [](#install)
-* [Basics:](#dependencies)
-* [Basics:](#compiling-abyss-from-github)
+* [Basics](#basics)
+* [Contributing to other's projects](#contributing to other's projects)
 
-Quick Start
-===========
 
 Initial Steps
 ==============
@@ -23,9 +20,10 @@ Initial Steps
 	
 * Try this link should you want a more detailed introduction (than mine):
 	https://guides.github.com/introduction/git-handbook/
-	
-## Basics:
 
+
+Basics
+======
 
 	## Creating a new repo
 	# create a repo (in a specific folder for that repo)
@@ -80,7 +78,8 @@ Initial Steps
 	git remote -v
 	
 
-## contributing to others projects:
+Contributing to other's projects
+================================
 	# first fork from their repo, clone your fork, submit the changes, then:
 
 	# Add a remote to the main repo (upstream):
