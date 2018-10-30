@@ -6,7 +6,6 @@ Contents
 ========
 
 * [Initial Steps](#initial-steps)
-	* [](#install)
 * [Basics](#basics)
 * [Contributing to other's projects](#contributing-to-others-projects)
 
