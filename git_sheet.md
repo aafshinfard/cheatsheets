@@ -40,13 +40,13 @@ cd/dir to a specific directory and use the command below to init a new repositor
 choose a filename and a file format and use the command below:
 ```bash
 	touch "filename"."format" (x.txt or y.py)
-```bash
+```
 
 
 ##### check which files git knows exist
-	
+```bash	
 git status
-
+```
 !! What are commits:
 
 Commits are checkpoints! they make up the essence of your project and
@@ -55,13 +55,18 @@ to group changes to a commit you need to  first add (both added
 files and midified ones) and then commit:
 	
 ##### LOCAL add: add your changes to your LOCAL repo
-	git add .
-	# Or to add some changes only:
-	git add "filename" "filename"
+```bash
+git add *
+```
+Or to add some changes only:
+```bash
+git add "filename" "filename"
+```
 
-	# Commit local: commit your changes in local repo
-	git commit -m "updates-comment"
-
+Commit local: commit your changes in local repo
+```bash
+git commit -m "updates-comment"
+```
 
 
 	## Working with online repos
