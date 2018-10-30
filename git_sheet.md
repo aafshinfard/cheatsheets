@@ -4,11 +4,11 @@
 ## Initial Steps:
 * Sign up for a github account
 * Install the git on your system
-	# https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
- 	# contact me and I'll tell you a bit about the main concepts.
+	https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+ 	contact me and I'll tell you a bit about the main concepts.
 	
-	## need a more detailed introduction? try this:
-	#	https://guides.github.com/introduction/git-handbook/
+* Try this link should you want a more detailed introduction (than mine):
+	https://guides.github.com/introduction/git-handbook/
 	
 ## Basics:
 
