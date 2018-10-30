@@ -20,7 +20,8 @@ Initial Steps
 
 * contact me and I'll tell you a bit about the main concepts.
 	
-* Try this link should you want a more detailed introduction (than mine):
+* Try the link below should you want a more detailed introduction (than mine).
+
 	https://guides.github.com/introduction/git-handbook/
 
 
