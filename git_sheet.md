@@ -2,8 +2,8 @@
 
 
 ## Initial Steps:
-	# You need to sign up for a github account
-	# You need to install the git on your system
+* Sign up for a github account
+* Install the git on your system
 	# https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
  	# contact me and I'll tell you a bit about the main concepts.
 	
