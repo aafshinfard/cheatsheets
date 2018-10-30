@@ -4,10 +4,15 @@ by Amirhossein, aafshinfard@bcgsc.ca
 
 Contents
 ========
+
+* [Quick Start](#quick-start)
 * [Initial Steps:](#Initial Steps:)
 	* [](#install)
 * [Basics:](#dependencies)
 * [Basics:](#compiling-abyss-from-github)
+
+Quick Start
+===========
 
 Initial Steps:
 ==============
