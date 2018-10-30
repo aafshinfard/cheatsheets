@@ -8,7 +8,7 @@ Contents
 * [Initial Steps](#initial-steps)
 	* [](#install)
 * [Basics](#basics)
-* [Contributing to other's projects](#contributing to other's projects)
+* [Contributing to other's projects](#contributing-to-other's-projects)
 
 
 Initial Steps
