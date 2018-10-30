@@ -14,9 +14,11 @@ Contents
 Initial Steps
 ==============
 * Sign up for a github account
-* Install the git on your system
+* Install the git on your system. Need a link?
+
 	https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
- 	contact me and I'll tell you a bit about the main concepts.
+
+* contact me and I'll tell you a bit about the main concepts.
 	
 * Try this link should you want a more detailed introduction (than mine):
 	https://guides.github.com/introduction/git-handbook/
