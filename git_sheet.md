@@ -4,7 +4,7 @@ by Amirhossein, aafshinfard@bcgsc.ca
 
 Contents
 ========
-* [Initial Steps:](#Initial Steps)
+* [Initial Steps:](#Initial Steps:)
 	* [](#install)
 * [Basics:](#dependencies)
 * [Basics:](#compiling-abyss-from-github)
