@@ -25,16 +25,20 @@ Initial Steps
 Basics
 ======
 
-Creating a new repo
+# Create a new repo
 	cd/dir to a specific directory and use the command below to init a new repository. The name will be the same as the directory's name in which you are running the command.
 	
-	```bash
-	> git init
-	```
+```bash
+> git init
+```
 
-	# add a new file
+
+# Add a new file
+choose a filename and a file format and use the command below:
+```bash
 	touch "filename"."format" (x.txt or y.py)
-	
+```bash
+
 	# check which files git knows exist
 	git status
 
