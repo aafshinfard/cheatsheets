@@ -1,8 +1,16 @@
-## Cheatsheet for Github
+Cheatsheet for Github
+=====================
 by Amirhossein, aafshinfard@bcgsc.ca
 
+Contents
+========
+* [Initial Steps:](#Initial Steps)
+	* [](#install)
+* [Basics:](#dependencies)
+* [Basics:](#compiling-abyss-from-github)
 
-## Initial Steps:
+Initial Steps:
+==============
 * Sign up for a github account
 * Install the git on your system
 	https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
