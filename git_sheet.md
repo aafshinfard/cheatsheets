@@ -8,7 +8,7 @@ Contents
 * [Initial Steps](#initial-steps)
 * [Basics](#basics)
 * [Contributing to Other's Projects](#contributing-to-others-projects)
-* [Bonus - Extra Tricks](#bonus-extra-tricks)
+* [Bonus - Extra Tricks](#bonus---extra-tricks)
 
 
 Initial Steps
