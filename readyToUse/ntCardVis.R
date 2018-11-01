@@ -1,6 +1,6 @@
 library(ggplot2)
 ##############################################################################
-############# single - patterm (skip to next chapters for more!)
+############# single - pattern (skip to next chapters for more!)
 
 addr1 = "PATH/TO/FILE.hist"
 head1 =

@@ -1,0 +1,39 @@
+# ALL Codes:
+
+
+
+
+### Subsampling reads:
+
+bzip2 -kcd /projects/btl/JGI-gymnosperm/redcedar/data/linear/IKBC_PCRfree_1_NA_ACAGTG_Thuja_plicata_I757_L1_R2.fastq.bz2 | head -n 40000000 | tail -n 8000000 | gzip > /projects/btl_scratch/aafshinfard/projects/redcedar/subsample/linear/2Mreadpairs_R2.fastq.gz
+
+
+
+### BWA MEM:
+
+time bwa mem -t8 -C -p /projects/btl_scratch/aafshinfard/projects/redcedar/closely_related_chloros/thuja_standishii_chloroplast.fa /projects/btl_scratch/sjackman/redcedar/lr1_lrbasic/outs/barcoded.fastq.gz | samtools view -u -F4 | samtools sort -@8 -o /projects/btl_scratch/aafshinfard/projects/redcedar/run17oct2018/mapped_lr1_lrbasic.bam
+
+
+time bwa mem -t20 -C /projects/btl_scratch/aafshinfard/projects/redcedar/closely_related_chloros/thuja_standishii_chloroplast.fa /projects/btl/JGI-gymnosperm/redcedar/data/linear/IKBD_PCRfree_2_NA_GTGAAA_Thuja_plicata_I757_L6_R1.fastq.bz2 /projects/btl/JGI-gymnosperm/redcedar/data/linear/IKBD_PCRfree_2_NA_GTGAAA_Thuja_plicata_I757_L6_R2.fastq.bz2 | samtools view -u -F4 | samtools sort -@8 -o /projects/btl_scratch/aafshinfard/projects/redcedar/runResults/
+
+
+
+
+### ABySS:
+
+nohup time my-command >my-command.log &
+
+
+# Paired-end multiple libraries
+nohup time abyss-pe j=8 k=96 v=-v kc=3 H=4 B=25G -C /projects/btl_scratch/aafshinfard/projects/redcedar/runResult/abyss/kc3/k96/10M/ name=redCedar_ lib='lr1 lr2 lr3 lr4' lr1='/projects/btl_scratch/aafshinfard/projects/redcedar/subsample/non_random/10Mreadpairs/lr1_sub.fastq.gz' lr2='/projects/btl_scratch/aafshinfard/projects/redcedar/subsample/non_random/10Mreadpairs/lr2_sub.fastq.gz' lr3='/projects/btl_scratch/aafshinfard/projects/redcedar/subsample/non_random/10Mreadpairs/lr3_sub.fastq.gz' lr4='/projects/btl_scratch/aafshinfard/projects/redcedar/subsample/non_random/10Mreadpairs/lr4_sub.fastq.gz' |& tee  abyss_kc3_k96_10M.log &
+
+# Paired-end single library
+abyss-pe j=12 k=96 v=-v kc=4 H=4 B=25G -C /projects/btl_scratch/aafshinfard/projects/redcedar/runResult/abyss/linear/10M/kc4k96/ name=redCedar in='/projects/btl_scratch/aafshinfard/projects/redcedar/subsample/linear/10Mreadpairs_R1.fastq.gz /projects/btl_scratch/aafshinfard/projects/redcedar/subsample/linear/10Mreadpairs_R2.fastq.gz' |& tee abyss_kc4_k96_10M.log
+
+### Quast:
+
+
+/projects/btl/lcoombe/bin/quast-5.0.0/quast.py -o ${out_dir}/kc3/k128/quast -r /Path/to/ref.fa -t8 -k ${out_dir}/kc3/k128/WS77111-scaffolds.fa
+
+grep 'True' 10M/kc4k112/quast/contigs_reports/all_alignments_redCedar_contigs.tsv | awk {'print $6'} | uniq| tr -s '_' | tr '_' ' ' | awk {'print $1'} | grep -f - -A1 10M/kc4k112/redCedar-contigs.fa | sed '/^--/ d' > 10M/kc4k112/filtered_contigs.fa
+
