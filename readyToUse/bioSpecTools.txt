@@ -37,3 +37,7 @@ abyss-pe j=12 k=96 v=-v kc=4 H=4 B=25G -C /projects/btl_scratch/aafshinfard/proj
 
 grep 'True' 10M/kc4k112/quast/contigs_reports/all_alignments_redCedar_contigs.tsv | awk {'print $6'} | uniq| tr -s '_' | tr '_' ' ' | awk {'print $1'} | grep -f - -A1 10M/kc4k112/redCedar-contigs.fa | sed '/^--/ d' > 10M/kc4k112/filtered_contigs.fa
 
+
+### Bandage
+#something like: Bandage image graph.gfa graph.gfa.png --query reference.fa
+Bandage image runResult/abyss/linear/10M/kc4k96/gfa/contigs.gfa runResult/abyss/linear/10M/kc4k96/gfa/contigs.gfa.png --query closely_related_chloros/thuja_standishii_chloroplast.fa
