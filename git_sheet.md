@@ -45,7 +45,8 @@ and use the command below to init a new repository. The name will be the same as
 ##### Add a new file
 choose a filename and a file format and use the command below:
 ```bash
-> touch "filename"."format" (x.txt or y.py)
+> touch "filename"."format" # command pattern
+> touch learn.txt # example
 ```
 
 
