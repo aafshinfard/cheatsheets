@@ -32,8 +32,8 @@ Basics
 Open you terminal or command-line (cmd).
 Go to a specific folder/directory (using `dir` or `cd` command)
 ```bash
-> cd /home/my_project/ # for linux
-> dir /home/my_project/ # for windows
+> cd /home/my_project/ 		# for linux
+> dir /home/my_project/ 	# for windows
 ```
 and use the command below to init a new repository. The name will be the same as the directory's name in which you are running the command.
 	
@@ -45,8 +45,8 @@ and use the command below to init a new repository. The name will be the same as
 ##### Add a new file
 choose a filename and a file format and use the command below:
 ```bash
-> touch "filename"."format" # command pattern
-> touch learn.txt # example
+> touch "filename"."format" 	# command pattern
+> touch learn.txt 		# example
 ```
 
 
