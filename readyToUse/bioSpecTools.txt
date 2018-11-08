@@ -39,5 +39,6 @@ grep 'True' 10M/kc4k112/quast/contigs_reports/all_alignments_redCedar_contigs.ts
 
 
 ### Bandage
-#something like: Bandage image graph.gfa graph.gfa.png --query reference.fa
+#first you need abyss-todot:
+abyss-todot runResult/abyss/mix/10M-2mixtrimed/kc4k96/redCedar-scaffolds.fa --gfa1 > runResult/abyss/mix/10M-2mixtrimed/kc4k96/gfa/scaffolds.gfa
 Bandage image runResult/abyss/linear/10M/kc4k96/gfa/contigs.gfa runResult/abyss/linear/10M/kc4k96/gfa/contigs.gfa.png --query closely_related_chloros/thuja_standishii_chloroplast.fa
