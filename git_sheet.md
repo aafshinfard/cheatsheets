@@ -18,7 +18,7 @@ Initial Steps
 
 	https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
-* contact me and I'll tell you a bit about the main concepts.
+* Contact me and I'll tell you a bit about the main concepts.
 	
 * Try the link below should you want a more detailed introduction (than mine).
 
@@ -29,7 +29,13 @@ Basics
 ======
 
 ##### Create a new repo
-cd/dir to a specific directory and use the command below to init a new repository. The name will be the same as the directory's name in which you are running the command.
+Open you terminal or command-line (cmd).
+Go to a specific folder/directory (using `dir` or `cd` command)
+```bash
+> cd /home/my_project/ 		# for linux
+> dir /home/my_project/ 	# for windows
+```
+and use the command below to init a new repository. The name will be the same as the directory's name in which you are running the command.
 	
 ```bash
 > git init
@@ -39,13 +45,14 @@ cd/dir to a specific directory and use the command below to init a new repositor
 ##### Add a new file
 choose a filename and a file format and use the command below:
 ```bash
-touch "filename"."format" (x.txt or y.py)
+> touch "filename"."format" 	# command pattern
+> touch learn.txt 		# example
 ```
 
 
 ##### check which files git knows exist
 ```bash	
-git status
+> git status
 ```
 !! What are commits:
 
@@ -56,32 +63,37 @@ files and midified ones) and then commit:
 	
 ##### LOCAL add: add your changes to your LOCAL repo
 ```bash
-git add *
+> git add *
 ```
-Or to add some changes only:
+Or to add some files only for a specific commit:
 ```bash
-git add "filename" "filename"
+> git add "filename" "filename"
 ```
 
 Commit local: commit your changes in local repo
 ```bash
-git commit -m "updates-comment"
+> git commit -m "updates-comment"
 ```
 
 
-	## Working with online repos
+##### Working with online repos
 
-	# Clone to local: cloning the repo to your local machine
-	git clone "repo-address"
-	
-	# LOCAL add: add your changes to your LOCAL repo
-	git add .
-	# Or to add some changes only:
-	git add "filename" "filename"
-
-	# Commit local: commit your changes in local repo
-	git commit -m "updates-comment"
-
+Clone to local: cloning the repo to your local machine
+```bash
+> git clone "repo-address"
+```
+LOCAL add: add your changes to your LOCAL repo
+```bash
+> git add .
+```
+Or to add some changes only:
+```bash	
+git add "filename" "filename"
+```
+Commit local: commit your changes in local repo
+```bash
+git commit -m "updates-comment"
+```
 
 	# UPDATE from online: Checking if there are new updates on the online repo:
 	git pull "remote-name"(origin) "branch-name"(master)
