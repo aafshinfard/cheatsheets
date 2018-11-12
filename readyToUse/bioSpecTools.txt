@@ -2,13 +2,13 @@
 
 
 
-
+_________________________________
 ### Subsampling reads:
 
 bzip2 -kcd /projects/btl/JGI-gymnosperm/redcedar/data/linear/IKBC_PCRfree_1_NA_ACAGTG_Thuja_plicata_I757_L1_R2.fastq.bz2 | head -n 40000000 | tail -n 8000000 | gzip > /projects/btl_scratch/aafshinfard/projects/redcedar/subsample/linear/2Mreadpairs_R2.fastq.gz
 
 
-
+_________________________________
 ### BWA MEM:
 
 time bwa mem -t8 -C -p /projects/btl_scratch/aafshinfard/projects/redcedar/closely_related_chloros/thuja_standishii_chloroplast.fa /projects/btl_scratch/sjackman/redcedar/lr1_lrbasic/outs/barcoded.fastq.gz | samtools view -u -F4 | samtools sort -@8 -o /projects/btl_scratch/aafshinfard/projects/redcedar/run17oct2018/mapped_lr1_lrbasic.bam
@@ -18,7 +18,7 @@ time bwa mem -t20 -C /projects/btl_scratch/aafshinfard/projects/redcedar/closely
 
 
 
-
+_________________________________
 ### ABySS:
 
 nohup time my-command >my-command.log &
@@ -30,15 +30,29 @@ nohup time abyss-pe j=8 k=96 v=-v kc=3 H=4 B=25G -C /projects/btl_scratch/aafshi
 # Paired-end single library
 abyss-pe j=12 k=96 v=-v kc=4 H=4 B=25G -C /projects/btl_scratch/aafshinfard/projects/redcedar/runResult/abyss/linear/10M/kc4k96/ name=redCedar in='/projects/btl_scratch/aafshinfard/projects/redcedar/subsample/linear/10Mreadpairs_R1.fastq.gz /projects/btl_scratch/aafshinfard/projects/redcedar/subsample/linear/10Mreadpairs_R2.fastq.gz' |& tee abyss_kc4_k96_10M.log
 
+_________________________________
 ### Quast:
-
 
 /projects/btl/lcoombe/bin/quast-5.0.0/quast.py -o ${out_dir}/kc3/k128/quast -r /Path/to/ref.fa -t8 -k ${out_dir}/kc3/k128/WS77111-scaffolds.fa
 
 grep 'True' 10M/kc4k112/quast/contigs_reports/all_alignments_redCedar_contigs.tsv | awk {'print $6'} | uniq| tr -s '_' | tr '_' ' ' | awk {'print $1'} | grep -f - -A1 10M/kc4k112/redCedar-contigs.fa | sed '/^--/ d' > 10M/kc4k112/filtered_contigs.fa
 
-
+_________________________________
 ### Bandage
 #first you need abyss-todot:
 abyss-todot runResult/abyss/mix/10M-2mixtrimed/kc4k96/redCedar-scaffolds.fa --gfa1 > runResult/abyss/mix/10M-2mixtrimed/kc4k96/gfa/scaffolds.gfa
 Bandage image runResult/abyss/linear/10M/kc4k96/gfa/contigs.gfa runResult/abyss/linear/10M/kc4k96/gfa/contigs.gfa.png --query closely_related_chloros/thuja_standishii_chloroplast.fa
+
+_________________________________
+### minimap2 and visualize
+/gsc/btl/linuxbrew/bin/minimap2 -P -k19 -w19 -m200 -t8 runResult/sealer/redCedar-scaffolds.10Mrp-k96-kc4_postSealer-10Mrp_scaffold.fa runResult/sealer/redCedar-scaffolds.10Mrp-k96-kc4_postSealer-10Mrp_scaffold.fa > runResult/sealer/minimap_falign.paf
+#convert from paf to eps:
+/gsc/btl/linuxbrew/bin/minidot runResult/sealer/minimap_selfalign.paf > runResult/sealer/outself.eps
+
+_________________________________
+### Nucmer (MUMmer) :
+nucmer -maxmatch -c 100 -p runResult/sealer/alignment/nucmer_ps1010 runResult/sealer/redCedar-scaffolds.10Mrp-k96-kc4_postSealer-10Mrp_scaffold.fa runResult/sealer/redCedar-scaffolds.10Mrp-k96-kc4_postSealer-10Mrp_scaffold.fa
+#using  DotPrep.py to prepare "Dot" inputs from nucmer output - Dot: https://blog.dnanexus.com/2018-01-11-dot-an-interactive-dot-plot-viewer-for-comparative-genomics/
+python3 /home/aafshinfard/Downloads/DotPrep.py --delta runResult/sealer/alignment/nucmer_ps1010.delta
+
+

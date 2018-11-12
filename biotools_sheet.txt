@@ -1,19 +1,50 @@
-## Amirhossein Afshinfard
+## Amirhossein Afshinfard - Cheatsheet for Bioinformatics tools
 _________________________________
 ### BWA
 
+_________________________________
 # BWA MEM
 
 _________________________________
-### ABySS
+### ABySS: genome assembly by short seuqence reads.
+- abyss 1
+- abyss 2 with bloom filters, just set bloom parameters and abyss will set to run with bloom filters.
+Bloom filter parameters: H=4 and B=50G, set them so you have low ....
 
+examples:
+# Paired-end multiple libraries
+abyss-pe j=8 k=96 v=-v kc=3 H=4 B=25G -C /projects/btl_scratch/aafshinfard/projects/redcedar/runResult/abyss/kc3/k96/10M/ name=redCedar_ lib='lr1 lr2 lr3 lr4' lr1='/projects/btl_scratch/aafshinfard/projects/redcedar/subsample/non_random/10Mreadpairs/lr1_sub.fastq.gz' lr2='/projects/btl_scratch/aafshinfard/projects/redcedar/subsample/non_random/10Mreadpairs/lr2_sub.fastq.gz' lr3='/projects/btl_scratch/aafshinfard/projects/redcedar/subsample/non_random/10Mreadpairs/lr3_sub.fastq.gz' lr4='/projects/btl_scratch/aafshinfard/projects/redcedar/subsample/non_random/10Mreadpairs/lr4_sub.fastq.gz' |& tee  abyss_kc3_k96_10M.log &
+
+# Paired-end single library
+abyss-pe j=12 k=96 v=-v kc=4 H=4 B=25G -C /projects/btl_scratch/aafshinfard/projects/redcedar/runResult/abyss/linear/10M/kc4k96/ name=redCedar in='/projects/btl_scratch/aafshinfard/projects/redcedar/subsample/linear/10Mreadpairs_R1.fastq.gz /projects/btl_scratch/aafshinfard/projects/redcedar/subsample/linear/10Mreadpairs_R2.fastq.gz' |& tee abyss_kc4_k96_10M.log
 
 _________________________________
-### ntHits and ntCard
+### MUMmer / and nucmer
+
+_________________________________
+### Quast: assembly quality assesment
+
+_________________________________
+### LINKS:
+
+_________________________________
+### Sealer:
+
+_________________________________
+### ARCS and ARKS:
+
+_________________________________
+### physlr
+
+_________________________________
+### Bandage: Visualize assemblies
+
+_________________________________
+### ntHits and ntCard: k-mer cardinality calculation for genomic sequences
 
 nthits -k32 -j8 /projects/btl_scratch/lcoombe/barcode-assemblies/unitig-graph/celegans/LRSIM-noVariantData/data/barcoded_reformatted.fastq.gz
-ntcard -k32 -p freq /projects/btl_scratch/lcoombe/barcode-assemblies/unitig-graph/celegans/LRSIM-noVariantData/data/barcoded_reformatted.fastq.gz
 
+ntcard -k32 -p freq /projects/btl_scratch/lcoombe/barcode-assemblies/unitig-graph/celegans/LRSIM-noVariantData/data/barcoded_reformatted.fastq.gz
 ntcard -k32 -p freq /projects/btl_scratch/sjackman/physlr/HYN5VCCXX_4cp.fq.gz
 
 
@@ -30,3 +61,6 @@ samtools sort -@8 -o			# sort a bam file in parallel and then output to ...
 samtools -c output.bam 			#number of reads in bam file
 samtools -c -F unicode output.bam 	# number of reads with a specific flag in bam file 
 samtools -c -F 260 output.bam 		#number of MAPPED reads in bam file
+
+
+
