@@ -1,4 +1,12 @@
 ## Amirhossein Afshinfard - Cheatsheet for Bioinformatics tools
+
+
+_________________________________
+### Downlowd data using e-utils:
+# fasta 
+AcessionNumber=KX832626.1 # Platycladus orientalis chloroplast, complete genome
+curl -s  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=${AcessionNumber}&rettype=fasta&retmode=txt">${AcessionNumber}.fa
+
 _________________________________
 ### BWA
 

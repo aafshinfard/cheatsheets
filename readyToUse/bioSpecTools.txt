@@ -1,6 +1,10 @@
 # ALL Codes:
 
-
+_________________________________
+### Downlowd data using e-utils:
+# fasta 
+AcessionNumber=KX832626.1 # Platycladus orientalis chloroplast, complete genome
+curl -s  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=${AcessionNumber}&rettype=fasta&retmode=txt">${AcessionNumber}.fa
 
 _________________________________
 ### Subsampling reads:
@@ -54,5 +58,7 @@ _________________________________
 nucmer -maxmatch -c 100 -p runResult/sealer/alignment/nucmer_ps1010 runResult/sealer/redCedar-scaffolds.10Mrp-k96-kc4_postSealer-10Mrp_scaffold.fa runResult/sealer/redCedar-scaffolds.10Mrp-k96-kc4_postSealer-10Mrp_scaffold.fa
 #using  DotPrep.py to prepare "Dot" inputs from nucmer output - Dot: https://blog.dnanexus.com/2018-01-11-dot-an-interactive-dot-plot-viewer-for-comparative-genomics/
 python3 /home/aafshinfard/Downloads/DotPrep.py --delta runResult/sealer/alignment/nucmer_ps1010.delta
+
+
 
 
