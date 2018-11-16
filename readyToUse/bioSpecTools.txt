@@ -49,16 +49,20 @@ Bandage image runResult/abyss/linear/10M/kc4k96/gfa/contigs.gfa runResult/abyss/
 
 _________________________________
 ### minimap2 and visualize
+
 /gsc/btl/linuxbrew/bin/minimap2 -P -k19 -w19 -m200 -t8 runResult/sealer/redCedar-scaffolds.10Mrp-k96-kc4_postSealer-10Mrp_scaffold.fa runResult/sealer/redCedar-scaffolds.10Mrp-k96-kc4_postSealer-10Mrp_scaffold.fa > runResult/sealer/minimap_falign.paf
 #convert from paf to eps:
 /gsc/btl/linuxbrew/bin/minidot runResult/sealer/minimap_selfalign.paf > runResult/sealer/outself.eps
 
+
+minimap2 -a -x asm20 -r 1000`
 _________________________________
 ### Nucmer (MUMmer) :
 nucmer -maxmatch -c 100 -p runResult/sealer/alignment/nucmer_ps1010 runResult/sealer/redCedar-scaffolds.10Mrp-k96-kc4_postSealer-10Mrp_scaffold.fa runResult/sealer/redCedar-scaffolds.10Mrp-k96-kc4_postSealer-10Mrp_scaffold.fa
 #using  DotPrep.py to prepare "Dot" inputs from nucmer output - Dot: https://blog.dnanexus.com/2018-01-11-dot-an-interactive-dot-plot-viewer-for-comparative-genomics/
-python3 /home/aafshinfard/Downloads/DotPrep.py --delta runResult/sealer/alignment/nucmer_ps1010.delta
+/gsc/btl/linuxbrew/bin/python3 /home/aafshinfard/Downloads/DotPrep.py --delta runResult/sealer/alignment/nucmer_ps1010.delta
 
+nucmer -maxmatch -c 100 -p nucmer_28andpolished KX832628.1.fa ../runResult/unicycler/005_final_polish.fasta
 
 
 
