@@ -17,6 +17,9 @@ _________________________________
 
 time bwa mem -t8 -C -p /projects/btl_scratch/aafshinfard/projects/redcedar/closely_related_chloros/thuja_standishii_chloroplast.fa /projects/btl_scratch/sjackman/redcedar/lr1_lrbasic/outs/barcoded.fastq.gz | samtools view -u -F4 | samtools sort -@8 -o /projects/btl_scratch/aafshinfard/projects/redcedar/run17oct2018/mapped_lr1_lrbasic.bam
 
+time bwa mem -t20 /projects/btl/aafshinfard/projects/redcedar/runResult/rotated-reverseComplemented.fa /projects/btl_scratch/aafshinfard/projects/redcedar/subsample/linear/25Mreadpairs_R1.fastq.gz /projects/btl_scratch/aafshinfard/projects/redcedar/subsample/linear/25Mreadpairs_R2.fastq.gz | samtools view -u -F4 | samtools sort -@8 -o /projects/btl_scratch/aafshinfard/projects/redcedar/runResult/mappingReads/toAssembled/25Mreadpairs.bam
+
+/projects/btl/aafshinfard/projects/redcedar/runResult
 
 time bwa mem -t20 -C /projects/btl_scratch/aafshinfard/projects/redcedar/closely_related_chloros/thuja_standishii_chloroplast.fa /projects/btl/JGI-gymnosperm/redcedar/data/linear/IKBD_PCRfree_2_NA_GTGAAA_Thuja_plicata_I757_L6_R1.fastq.bz2 /projects/btl/JGI-gymnosperm/redcedar/data/linear/IKBD_PCRfree_2_NA_GTGAAA_Thuja_plicata_I757_L6_R2.fastq.bz2 | samtools view -u -F4 | samtools sort -@8 -o /projects/btl_scratch/aafshinfard/projects/redcedar/runResults/
 
