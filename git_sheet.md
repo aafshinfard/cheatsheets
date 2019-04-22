@@ -111,14 +111,14 @@ git commit -m "updates-comment"
 Team Projects Basics
 ====================
 #### Clone project and work on a branch
-
-##### Rebase and Merge
+[updating]
+#### Rebase and Merge
 After applying your changes on your local branch (name e.g. `feature`) you need to push it into remote branchin order to make a pull request. But sometimes your local/remote branches are diverged from the master (as other's did some PR when you're editing your branch).
 So you need to resolve the divergence by either `merge` or `rebase`. There are difference between these two:
 ###### Differences:
-
+[updating]
 ###### Merge:
-
+[updating]
 ###### Rebase:
 ```bash
 > git fetch origin 		# fetch the whole remote
