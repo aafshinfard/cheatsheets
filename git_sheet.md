@@ -7,6 +7,7 @@ Contents
 
 * [Initial Steps](#initial-steps)
 * [Basics](#basics)
+* [Team projects Basics](#team-projects-basics)
 * [Contributing to Other's Projects](#contributing-to-others-projects)
 * [Bonus - Extra Tricks](#bonus---extra-tricks)
 
@@ -107,6 +108,26 @@ git commit -m "updates-comment"
 	# Check remotes:
 	git remote -v
 	
+Team Projects Basics
+====================
+##### Clone project and work on a branch
+
+##### Rebase and Merge
+After applying your changes on your local branch (name e.g. `feature`) you need to push it into remote branchin order to make a pull request. But sometimes your local/remote branches are diverged from the master (as other's did some PR when you're editing your branch).
+So you need to resolve the divergence by either `merge` or `rebase`. There are difference between these two:
+###### Differences:
+
+###### Merge:
+
+###### Rebase:
+```bash
+> git fetch origin 		# fetch the whole remote
+> git checkout feature		# feature or whatever your local branch's name is
+> git rebase origin/master	# Add master changes to your blocal branch
+> git push -f 			# force push your local rebased branch into your remote branch
+```
+You may face some issues after calling the rebase command. In one case, it arises from the different edits for the same line in those two version of the code. Then you'll need to resolve the the ambiguity and `--continue` to your rebase.
+
 
 Contributing to others projects
 ================================
