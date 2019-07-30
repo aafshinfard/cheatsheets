@@ -1,4 +1,4 @@
-Cheatsheet for Github
+Cheatsheet / Sys setup
 =====================
 by Amirhossein, aafshinfard@bcgsc.ca
 
