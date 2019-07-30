@@ -1,6 +1,5 @@
 Cheatsheet / Sys setup
 =====================
-by Amirhossein, aafshinfard@bcgsc.ca
 
 Contents
 ========
