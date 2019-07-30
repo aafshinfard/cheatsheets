@@ -15,7 +15,7 @@ Initial Steps
 ==============
 Guake:
 ```bash
-/usr/bin/guake&
+> /usr/bin/guake&
 ```
 
 Pycharm:
@@ -30,5 +30,5 @@ path exports:
 
 unset prompt:
 ```bash
-> export PATH=/usr/bin:$PATH
+> unset PROMPT_COMMAND
 ```
