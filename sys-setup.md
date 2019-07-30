@@ -14,7 +14,9 @@ Contents
 Initial Steps
 ==============
 Guake:
+```bash
 /usr/bin/guake&
+```
 
 Pycharm:
 ```bash
