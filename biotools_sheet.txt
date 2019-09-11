@@ -28,7 +28,10 @@ abyss-pe j=12 k=96 v=-v kc=4 H=4 B=25G -C /projects/btl_scratch/aafshinfard/proj
 
 _________________________________
 ### MUMmer / and nucmer
-
+# find all maximal unique matches between ref and query
+mummer -mum -b -c ref.fasta query.fasta > mummer.mums
+# make a dotplot
+mummerplot -x "[0,275287]" -y "[0,265111]" -postscript -p mummer mummer.mums
 _________________________________
 ### Quast: assembly quality assesment
 
