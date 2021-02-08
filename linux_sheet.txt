@@ -67,3 +67,8 @@ awk 'NR==FNR{a[$1$2]++;next} ($1$2 in a){print $1"\t"$2"\t"$3"\t"$4"\t1"}' ${fil
 awk 'NR==FNR{a[$2$1]++;next} ($1$2 in a){print $1"\t"$2"\t"$3"\t"$4"\t1"}' ${file_true_edges} ${file_overlap}.edges.tsv >> ${file_overlap}.edges.labeled_t.tsv
 awk 'NR==FNR{a[$1$2]++;next} !($1$2 in a){print $1"\t"$2"\t"$3"\t"$4"\t0"}' ${file_overlap}.edges.labeled_t.tsv ${file_overlap}.edges.tsv > ${file_overlap}.edges.labeled_f.tsv
 
+
+
+##################
+### Process related:
+pv -pd <pid>  //will show how much the process has read through an input file, which can help you get a sense of how much longer the process will take
