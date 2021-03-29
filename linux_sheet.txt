@@ -72,3 +72,27 @@ awk 'NR==FNR{a[$1$2]++;next} !($1$2 in a){print $1"\t"$2"\t"$3"\t"$4"\t0"}' ${fi
 ##################
 ### Process related:
 pv -pd <pid>  //will show how much the process has read through an input file, which can help you get a sense of how much longer the process will take
+
+
+###################
+### Run-time and memory-peak monitoring:
+/home/kmnip/bin/memusg -t YOUR COMMAND HERE
+
+
+### SLURM job submitting
+
+#!/bin/bash
+#SBATCH --partition=upgrade
+#SBATCH --job-name=YOUR_JOB_NAME_HERE
+#SBATCH --exclusive
+#SBATCH --output=%x_%j.out
+#SBATCH --workdir=/path/of/your/log/directory
+set -euo pipefail // make sure that commands error out
+hostname // machine name for troubleshooting
+date // start date and time
+memusg -t YOUR COMMAND HERE
+date // end date and time
+- To submit the script on Numbers:
+sbatch script.sh
+
+The bits for hostname , date , and set -euo pipefail are not required at all
