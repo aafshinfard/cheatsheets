@@ -34,8 +34,17 @@ mummer -mum -b -c ref.fasta query.fasta > mummer.mums
 mummerplot -x "[0,275287]" -y "[0,265111]" -postscript -p mummer mummer.mums
 _________________________________
 ### Quast: assembly quality assesment
+ref=/projects/btl_scratch/aafshinfard/projects/physlr/publication/drafts/grch38_no_Y_chromosome.fa
 
-_________________________________
+file=na12878.stlfr.arks
+quast-lg -t48 -es --fast --large --scaffold-gap-max-size 100000 --min-identity 95 -R ${ref} -o ${file}.quast ${file}.fa
+
+# Interpreting output:
+# 
+# N50 - NG50 - LG75 - #miss - farction% - largest alignment - NGA50 - LGA75
+# 19 - 20 - 26 - 27 - 40 - 45 - 48 - 54 
+head na24143.pacbio.physlr.quast/transposed_report.txt -n4 | tail -n1 | awk '{print $19" - "$20" - "$26" - "$27" - "$40" - "$45" - "$48" - "$54}'
+________________________________
 ### LINKS:
 
 _________________________________
