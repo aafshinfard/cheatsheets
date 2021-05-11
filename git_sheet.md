@@ -18,10 +18,8 @@ Initial Steps
 * Install the git on your system. Need a link?
 
 	https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-
-* Contact me and I'll tell you a bit about the main concepts.
 	
-* Try the link below should you want a more detailed introduction (than mine).
+* Try the link below should you want a more detailed introduction (you can read the main concepts and skip the rest).
 
 	https://guides.github.com/introduction/git-handbook/
 
