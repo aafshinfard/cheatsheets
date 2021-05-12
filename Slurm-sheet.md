@@ -31,7 +31,10 @@ sbatch filename.sh
 
 Commands to monitor jobs:
 ======
-
+See status of job (default: for this user and 12am+)
 ```bash
-sbatch filename.sh
+sacct
+sacct -a
+sacct -S 06.04 # to see all data since a specific date
+sacct --format=jobid,jobname,user,partition,elapsed,ncpus,state,nodelist,reqmem -X #cumulative data
 ```
