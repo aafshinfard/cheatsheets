@@ -1,7 +1,7 @@
-## Amirhossein Afshinfard - Cheatsheet for Bioinformatics tools
+Amirhossein Afshinfard - Cheatsheet for Bioinformatics tools
 
 
-Cheatsheet / Sys setup
+Cheatsheet
 =====================
 
 Contents
