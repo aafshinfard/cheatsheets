@@ -9,9 +9,7 @@ Contents
 
 * [Alignment](#alignment)
 * [Genome assembly](#genome-assembly)
-* [Team projects Basics](#team-projects-basics)
-* [Contributing to Other's Projects](#contributing-to-others-projects)
-* [Bonus - Extra Tricks](#bonus---extra-tricks)
+
 
 
 Alignment
