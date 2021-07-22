@@ -57,6 +57,27 @@ quast-lg -t48 -es --fast --large --scaffold-gap-max-size 100000 --min-identity 9
 head na24143.pacbio.physlr.quast/transposed_report.txt -n4 | tail -n1 | awk '{print $19" - "$20" - "$26" - "$27" - "$40" - "$45" - "$48" - "$54}'
 ```
 
+Jupiterplots:
+```bash
+# Variables
+draftdir=/projects/btl_scratch/aafshinfard/projects/abyss2.5/hsapiens/experiments/numbers3/abyss2.5/na12878_2x151-2/assembly-k90-kc2-B200G/
+prefix=assembly-scaffolds
+ng=90
+name=${prefix}_ng${ng}
+dir=${draftdir}/jupiterplots_${name}/ #new dir for jupiterplot outputs
+fasta=${prefix}.fa
+fasta_renamed=${prefix}_renamed.fa
+setupdir=/projects/btl_scratch/aafshinfard/projects/physlr/publication/figures/jupiterplots/jupiterplotcodes/JustinChu/ # Jupiterplot codes
+ref=/projects/btl_scratch/aafshinfard/projects/physlr/publication/drafts/grch38_no_Y_chromosome.fa
+# runs
+mkdir $dir
+cd $dir
+cp -r ${setupdir}* ./
+ln -s $ref
+awk '/^>/{print ">" ++i; next}{print}' < ${draftdir}${fasta} > ${fasta_renamed}
+./jupiter ng=$ng t=47 name=$name ref=grch38_no_Y_chromosome.fa fa=${fasta_renamed}
+#
+```
 _________________________________
 ### Downlowd data using e-utils:
 # fasta 
