@@ -42,9 +42,9 @@ abyss-pe j=12 k=96 v=-v kc=4 H=4 B=25G -C /projects/btl_scratch/aafshinfard/proj
 ```
 Konnector: (close the insert in paired-end reads by traversing DBG)
 ```bash:
-reads
-/projects/btl/vnikolic/installs/abyss-2.3.1/bin/konnector -k 120 -o konnector_ -b 200G -j48 --fastq ../na24143_2x250/1_1.fq.gz ../na24143_2x250/1_2.fq.gz 2>&1 | tee konnector_full.log
-/projects/btl/vnikolic/installs/abyss-2.3.1/bin/konnector --extend -k 120 -o konnector_extend_ -b 200G -j48 --fastq ../na24143_2x250/1_1.fq.gz ../na24143_2x250/1_2.fq.gz 2>&1 | tee konnector_extend_full.log
+reads="../na24143_2x250/1_1.fq.gz ../na24143_2x250/1_2.fq.gz"
+/projects/btl/vnikolic/installs/abyss-2.3.1/bin/konnector -k 120 -o konnector_ -b 200G -j48 --fastq $reads 2>&1 | tee konnector_full.log
+/projects/btl/vnikolic/installs/abyss-2.3.1/bin/konnector --extend -k 120 -o konnector_extend_ -b 200G -j48 --fastq $reads 2>&1 | tee konnector_extend_full.log
 
 ```
 
