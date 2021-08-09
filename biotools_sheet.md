@@ -40,6 +40,13 @@ abyss-pe j=8 k=96 v=-v kc=3 H=4 B=25G -C /projects/btl_scratch/aafshinfard/proje
 # Paired-end single library
 abyss-pe j=12 k=96 v=-v kc=4 H=4 B=25G -C /projects/btl_scratch/aafshinfard/projects/redcedar/runResult/abyss/linear/10M/kc4k96/ name=redCedar in='/projects/btl_scratch/aafshinfard/projects/redcedar/subsample/linear/10Mreadpairs_R1.fastq.gz /projects/btl_scratch/aafshinfard/projects/redcedar/subsample/linear/10Mreadpairs_R2.fastq.gz' |& tee abyss_kc4_k96_10M.log
 ```
+Konnector: (close the insert in paired-end reads by traversing DBG)
+```bash:
+reads
+/projects/btl/vnikolic/installs/abyss-2.3.1/bin/konnector -k 120 -o konnector_ -b 200G -j48 --fastq ../na24143_2x250/1_1.fq.gz ../na24143_2x250/1_2.fq.gz 2>&1 | tee konnector_full.log
+/projects/btl/vnikolic/installs/abyss-2.3.1/bin/konnector --extend -k 120 -o konnector_extend_ -b 200G -j48 --fastq ../na24143_2x250/1_1.fq.gz ../na24143_2x250/1_2.fq.gz 2>&1 | tee konnector_extend_full.log
+
+```
 
 Quast:
 ```bash
