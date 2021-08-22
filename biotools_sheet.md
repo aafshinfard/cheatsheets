@@ -55,7 +55,7 @@ ref=/projects/btl_scratch/aafshinfard/projects/physlr/publication/drafts/grch38_
 file=na12878.stlfr.arks
 quast-lg -t48 -es --fast --large --scaffold-gap-max-size 100000 --min-identity 95 -R ${ref} -o ${file}.quast ${file}.fa
 
-/projects/btl/aafshinfard/tools/quast/quast-5.0.2/quast.py --no-icarus ${file} -r $ref --large --threads 47 --output-dir ${file}.quast-detailed 2>&1 | tee ${file}.quast-detailed.log
+/projects/btl/aafshinfard/tools/quast/quast-5.0.2/quast.py --no-icarus ${file} -r $ref --large --threads 47 --output-dir quast-detailed-${file} 2>&1 | tee quast-detailed-${file}.log
 
 # Interpreting output:
 # 
