@@ -52,7 +52,7 @@ Environments:
 SRA toolkit / 
 
 ```bash
-> conda install -c bioconda sra-tools
+> conda install -c bioconda/label/cf201901 sra-tools
 # https://anaconda.org/bioconda/sra-tools
 ```
 
