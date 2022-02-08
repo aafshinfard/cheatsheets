@@ -1,11 +1,24 @@
 ## How to:
 
 * Activating an environment:
-
 ```bash
-> conda_env "name of env"
+> conda_env "NAME_OF_ENV" #function added to the `.bashrc`
 ```
 
+* Make sure miniconda lib is leading the $PATH after activation:
+```bash
+$ echo $PATH
+/projects/btl/aafshinfard/miniconda3/envs/"NAME_OF_ENV"/bin:/p...
+```
+
+* Function to activate an env (added to the `bashrc` file):
+
+```bash
+function conda_env(){
+        env_name=$1
+        source /projects/btl/aafshinfard/miniconda3/bin/activate ${env_name}
+}
+```
 
 ## Environments: 
 
@@ -21,6 +34,5 @@ Rust mdbg
 
 * qt:
 ```bash
-conda install -c anaconda mesa-libgl-cos6-x86_64
-conda install -c conda-forge mesa-libgl-devel-cos7-x86_64
+
 ```
