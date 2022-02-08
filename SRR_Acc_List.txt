@@ -1,39 +1,40 @@
-SRR8858432
-SRR8858433
-SRR8858434
-SRR8858435
-SRR8858436
-SRR8858437
-SRR8858438
-SRR8858439
-SRR8858440
-SRR8858442
-SRR8858443
-SRR8858444
-SRR8858445
-SRR8858446
-SRR8858447
-SRR8858448
-SRR8858449
-SRR8858450
-SRR8858451
-SRR8858452
-SRR8858453
-SRR8858454
-SRR8858455
-SRR8858456
-SRR8858457
-SRR8858458
-SRR8858459
-SRR8858460
-SRR8858461
-SRR8858462
-SRR8858463
-SRR8858464
-SRR8858465
-SRR8858466
-SRR8858467
-SRR8858468
-SRR8858469
-SRR8858470
-SRR8859679
+#!/usr/bin/env bash
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858432/SRR8858432.sra -o SRR8858432_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858433/SRR8858433.sra -o SRR8858433_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858434/SRR8858434.sra -o SRR8858434_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858435/SRR8858435.sra -o SRR8858435_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858436/SRR8858436.sra -o SRR8858436_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858437/SRR8858437.sra -o SRR8858437_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858438/SRR8858438.sra -o SRR8858438_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858439/SRR8858439.sra -o SRR8858439_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858440/SRR8858440.sra -o SRR8858440_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858442/SRR8858442.sra -o SRR8858442_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858443/SRR8858443.sra -o SRR8858443_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858444/SRR8858444.sra -o SRR8858444_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858445/SRR8858445.sra -o SRR8858445_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858446/SRR8858446.sra -o SRR8858446_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858447/SRR8858447.sra -o SRR8858447_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858448/SRR8858448.sra -o SRR8858448_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858449/SRR8858449.sra -o SRR8858449_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858450/SRR8858450.sra -o SRR8858450_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858451/SRR8858451.sra -o SRR8858451_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858452/SRR8858452.sra -o SRR8858452_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858453/SRR8858453.sra -o SRR8858453_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858454/SRR8858454.sra -o SRR8858454_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858455/SRR8858455.sra -o SRR8858455_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858456/SRR8858456.sra -o SRR8858456_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858457/SRR8858457.sra -o SRR8858457_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858458/SRR8858458.sra -o SRR8858458_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858459/SRR8858459.sra -o SRR8858459_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858460/SRR8858460.sra -o SRR8858460_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858461/SRR8858461.sra -o SRR8858461_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858462/SRR8858462.sra -o SRR8858462_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858463/SRR8858463.sra -o SRR8858463_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858464/SRR8858464.sra -o SRR8858464_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858465/SRR8858465.sra -o SRR8858465_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858466/SRR8858466.sra -o SRR8858466_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858467/SRR8858467.sra -o SRR8858467_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858468/SRR8858468.sra -o SRR8858468_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858469/SRR8858469.sra -o SRR8858469_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8858470/SRR8858470.sra -o SRR8858470_WGS_of_HG002_with_PacBio_CCS.sra
+curl -L ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR885/SRR8859679/SRR8859679.sra -o SRR8859679_WGS_of_HG002_with_PacBio_CCS.sra
