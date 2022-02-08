@@ -7,7 +7,8 @@ Contents
 
 * [Initial Steps](#initial-steps)
 * [Basics](#basics)
-
+* [Environments](#environments)
+* 
 
 Initial Steps
 ==============
