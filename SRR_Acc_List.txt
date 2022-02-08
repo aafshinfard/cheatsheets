@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR885/002/SRR8858432/SRR8858432_subreads.fastq.gz -o SRR8858432_WGS_of_HG002_with_PacBio_CCS_subreads.fastq.gz
 curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR885/003/SRR8858433/SRR8858433_subreads.fastq.gz -o SRR8858433_WGS_of_HG002_with_PacBio_CCS_subreads.fastq.gz
 curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR885/004/SRR8858434/SRR8858434_subreads.fastq.gz -o SRR8858434_WGS_of_HG002_with_PacBio_CCS_subreads.fastq.gz
