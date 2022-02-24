@@ -68,3 +68,9 @@ SRA toolkit /
 ```bash
 
 ```
+
+* qt:
+```bash
+conda install -c anaconda biopython biopython
+```
+
