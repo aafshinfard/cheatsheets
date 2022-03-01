@@ -69,8 +69,10 @@ SRA toolkit /
 
 ```
 
-* qt:
+* rust-mdb:
 ```bash
-conda install -c anaconda biopython biopython
+rust
+gfatools
+rust-mdbg
 ```
 
