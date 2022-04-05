@@ -8,7 +8,7 @@ Contents
 * [Initial Steps](#initial-steps)
 * [Basics](#basics)
 * [Environments](#environments)
-* 
+* [Usefull Packages](#usefull-packages)
 
 Initial Steps
 ==============
@@ -83,14 +83,16 @@ rust-mdbg
 axel
 ```
 
+* bioconda-utils
+```bash
+mamba create -n bioconda -c conda-forge -c bioconda bioconda-utils
+```
+
+Usefull packages
+==============
 * mamba
 ```bash
 # Mamba is a reimplementation of the conda package manager in C++
 # https://github.com/mamba-org/mamba
 # install just like any other conda package and then you can do `mamba install` instead of `conda install`
-```
-
-* bioconda-utils
-```bash
-mamba create -n bioconda -c conda-forge -c bioconda bioconda-utils
 ```
