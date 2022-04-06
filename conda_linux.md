@@ -9,6 +9,7 @@ Contents
 * [Basics](#basics)
 * [Environments](#environments)
 * [Usefull Packages](#usefull-packages)
+* [Uloading to Conda](#uploading-t-conda)
 
 Initial Steps
 ==============
@@ -96,3 +97,9 @@ Usefull packages
 # https://github.com/mamba-org/mamba
 # install just like any other conda package and then you can do `mamba install` instead of `conda install`
 ```
+
+Uploading to conda
+==============
+Summary: 
+There is a GitHub repo for bioconda, and you need to fork and make a new branch and add a recipe for your tool. Then you test it locally to see if it builds okay, and then you can push your changes back to the main repo and it will be available for users. Follow the instructions in the link below:
+https://bioconda.github.io/contributor/index.html
