@@ -81,7 +81,7 @@ Clone to local: cloning the repo to your local machine
 ```bash
 > git clone "repo-address"
 # or
-> git clone git@github.com:<USERNAME>/<REPO>.git
+> git clone git@github.com:<USERNAME>/<REPO>.git #clone using ssh to avoid prompting to password when ssh authentication is set
 ```
  
 
