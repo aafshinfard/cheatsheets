@@ -48,12 +48,16 @@ function conda_env(){
 
 Environments:
 ==============
-* sra:
-SRA toolkit / 
-
+* deepcut: contains all packages I need for the deepcut project 
 ```bash
-> conda install -c bioconda/label/cf201901 sra-tools
-# https://anaconda.org/bioconda/sra-tools
+        # make a new conda env
+> conda create --name deepcut python=3.5
+        # install pysam, wrapper for htslib that powers samtools (https://github.com/pysam-developers/pysam)
+> conda config --add channels defaults
+> conda config --add channels conda-forge
+> conda config --add channels bioconda
+> conda install pysam
+        # other packages required:
 ```
 
 
@@ -96,6 +100,14 @@ Usefull packages
 # https://github.com/mamba-org/mamba
 # install just like any other conda package and then you can do `mamba install` instead of `conda install`
 ```
+
+* SRA toolkit:
+```bash
+> conda install -c bioconda/label/cf201901 sra-tools
+# https://anaconda.org/bioconda/sra-tools
+```
+
+
 
 Uploading to Bioconda
 ==============
