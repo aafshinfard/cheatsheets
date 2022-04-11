@@ -80,7 +80,11 @@ Commit local: commit your changes in local repo
 Clone to local: cloning the repo to your local machine
 ```bash
 > git clone "repo-address"
+# or
+> git clone git@github.com:<USERNAME>/<REPO>.git
 ```
+ 
+
 LOCAL add: add your changes to your LOCAL repo
 ```bash
 > git add .
