@@ -1,6 +1,6 @@
 Cheatsheet for Github
 =====================
-by Amirhossein, aafshinfard@bcgsc.ca
+by Amirhossein, a.afshinfard@gmail.com
 
 Contents
 ========
