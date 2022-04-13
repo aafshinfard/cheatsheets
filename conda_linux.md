@@ -58,6 +58,8 @@ Environments:
 > conda config --add channels bioconda
 > conda install pysam
         # other packages required:
+> mamba install -c bioconda minimap2 #minimap2 for mapping reads against the draft assembly
+
 ```
 
 
