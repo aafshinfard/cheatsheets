@@ -50,6 +50,9 @@ reads="../na24143_2x250/1_1.fq.gz ../na24143_2x250/1_2.fq.gz"
 
 Quast:
 ```bash
+# Lauren's command, standard in the lab:
+quast -t12  -o quast_${fasta} -r ${ref} --fast --large --scaffold-gap-max-size 100000  --min-identity 80 --split-scaffolds ${fasta}
+# More
 ref=/projects/btl_scratch/aafshinfard/projects/physlr/publication/drafts/grch38_no_Y_chromosome.fa
 
 file=na12878.stlfr.arks
