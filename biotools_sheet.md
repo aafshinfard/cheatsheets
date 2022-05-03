@@ -50,21 +50,21 @@ reads="../na24143_2x250/1_1.fq.gz ../na24143_2x250/1_2.fq.gz"
 
 Quast:
 ```bash
+conda_env ENV_NAME # ENV_NAME and environment with quast 
+ref=
+fasta=
 # Lauren's command, standard in the lab:
 quast -t12  -o quast__${ref}__${fasta} -r ${ref} --fast --large --scaffold-gap-max-size 100000  --min-identity 80 --split-scaffolds ${fasta}
+
+# retrieve quast results
+cat quast__${ref}__${fasta}/transposed_report.tsv |  mlr --tsv cut -o -f Assembly,NG50,NGA50,"# misassemblies","# local misassemblies","Genome fraction (%)","Duplication ratio","Total length","Unaligned length","# unaligned contigs"| sed 's/\t/|/g' | sed 's/^/|/g' | sed 's/$/|/g'
+
 # More
-ref=/projects/btl_scratch/aafshinfard/projects/physlr/publication/drafts/grch38_no_Y_chromosome.fa
 
-file=na12878.stlfr.arks
-quast-lg -t48 -es --fast --large --scaffold-gap-max-size 100000 --min-identity 95 -R ${ref} -o ${file}.quast ${file}.fa
+quast -t48 -es --fast --large --scaffold-gap-max-size 100000 --min-identity 95 -R ${ref} -o ${file}.quast ${file}.fa
 
-/projects/btl/aafshinfard/tools/quast/quast-5.0.2/quast.py --no-icarus ${file} -r $ref --large --threads 47 --output-dir quast-detailed-${file} 2>&1 | tee quast-detailed-${file}.log
+quast --no-icarus ${file} -r $ref --large --threads 47 --output-dir quast-detailed-${file} 2>&1 | tee quast-detailed-${file}.log
 
-# Interpreting output:
-# 
-# N50 - NG50 - LG75 - #miss - farction% - largest alignment - NGA50 - LGA75
-# 19 - 20 - 26 - 27 - 40 - 45 - 48 - 54 
-head na24143.pacbio.physlr.quast/transposed_report.txt -n4 | tail -n1 | awk '{print $19" - "$20" - "$26" - "$27" - "$40" - "$45" - "$48" - "$54}'
 ```
 
 Jupiterplots:
