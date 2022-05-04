@@ -54,7 +54,7 @@ conda_env ENV_NAME # ENV_NAME and environment with quast
 ref=
 fasta=
 # Lauren's command, standard in the lab:
-quast -t12  -o quast__${ref}__${fasta} -r ${ref} --fast --large --scaffold-gap-max-size 100000  --min-identity 80 --split-scaffolds ${fasta}
+quast -t12  -o quast__${ref}__${fasta} -r ${ref} --fast --large --scaffold-gap-max-size 100000  --min-identity 80 --split-scaffolds ${fasta} #wth the correct installation of quast (conda_env deepcut)
 
 # retrieve quast results
 cat quast__${ref}__${fasta}/transposed_report.tsv |  mlr --tsv cut -o -f Assembly,NG50,NGA50,"# misassemblies","# local misassemblies","Genome fraction (%)","Duplication ratio","Total length","Unaligned length","# unaligned contigs"| sed 's/\t/|/g' | sed 's/^/|/g' | sed 's/$/|/g'
