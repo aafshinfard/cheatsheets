@@ -16,6 +16,9 @@ ls -lrh
 wc -l
 
 
+# check how far into the file the process has read:
+pv -pd PROCESS_ID
+
 ######################################################
 #### Advanced:
 
