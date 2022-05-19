@@ -63,6 +63,24 @@ Environments:
 
 ```
 
+* aga: contains all packages I need for the AGA project 
+```bash
+        # make a new conda env
+> conda create --name aga python=3.5
+        # install mamba to faster install other packages
+conda install -c conda-forge mamba
+        # install qt for GfaViz
+mamba install -c anaconda qt
+mamba install -c anaconda mesa-libgl-cos6-x86_64
+mamba install -c bioconda gfapy
+# GfaViz is not available through conda, so:
+git clone https://github.com/ggonnella/gfaviz
+cd gfaviz
+qmake # was originally qmake-qt5, but as I intalled qt via conda seems like I need to run like this...
+make
+
+```
+
 
 * rust-env:
 
