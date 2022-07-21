@@ -36,6 +36,8 @@ XYZ & disown
 (XYZ &)
 	(java -jar ./ABySS-explorer.jar &)
 
+### Running in background and redirecting output to file:
+some_cmnd > some_file 2>&1 &
 
 ### less command:
 
