@@ -25,6 +25,8 @@ minimap2:
 > 
 > # Short-read data vs. reference mapping
 > minimap2 -ax sr -t47 ${ref} ${read_1} ${read_2} | samtools sort -T ${outdir}/tmp -O bam -o ${outbam}
+> # long read to ref > sam
+> minimap2 -ax map-ont ref.fa ont.fq.gz -t48 > aln.sam
 ```
 
 BWA:
