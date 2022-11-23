@@ -105,7 +105,7 @@ rust-mdbg
 ```bash
 # Lightweight CLI download accelerator / a fast alternative to wget
 # axel: https://anaconda.org/conda-forge/axel
-axel
+axel [link]
 ```
 
 * bioconda-utils
