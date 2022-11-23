@@ -1,0 +1,13 @@
+
+
+Software and versions used for the basecalling are explained below:
+Nanopore raw signal data were downloaded, extracted and then converted to BLOW5 format using slow5tools. Then, they were basecalled using buttery-eel under Guppy 6.3.7 high accuracy mode. Qscore 7 was used for pass and fail cut-off.
+
+Base-calling commands:
+
+#basecall gridION data
+
+buttery-eel  -i  min_grid.blow5  --guppy_bin /install/ont-guppy-6.3.7/bin/  --config dna_r9.4.1_450bps_hac.cfg -x cuda:all -q 7 -o reads_min_grid.fastq --port 5555  --use_tcp
+
+#basecall promethION data
+buttery-eel  -i  prom.blow5  --guppy_bin /install/ont-guppy-6.3.7/bin/  --config dna_r9.4.1_450bps_hac_prom.cfg -x cuda:all -q 7 -o reads_prom.fastq --port 5556  --use_tcp
