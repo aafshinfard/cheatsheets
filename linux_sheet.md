@@ -15,6 +15,9 @@ ls
 ls -lrh
 wc -l
 
+redirect both stderr and stdout to the same log file
+>>log_file_name 2>&1
+
 
 # check how far into the file the process has read:
 pv -pd PROCESS_ID
