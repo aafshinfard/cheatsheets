@@ -137,3 +137,16 @@ There is a GitHub repo for bioconda, and you need to fork and make a new branch 
 https://bioconda.github.io/contributor/index.html
 checking locally:
 https://bioconda.github.io/contributor/building-locally.html
+
+
+Log of environments
+==============
+* python39:
+```bash
+> conda create -n python39 python=3.9
+> conda activate python39
+> conda install -c conda-forge mamba
+> mamba install -c conda-forge pypy3.9
+> mamba install -c bioconda btllib
+```
+```
