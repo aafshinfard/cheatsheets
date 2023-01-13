@@ -149,4 +149,10 @@ Log of environments
 > mamba install -c conda-forge pypy3.9
 > mamba install -c bioconda btllib
 ```
+
+* python39_2:
+```bash
+> conda create -n python39_2 python=3.9
+> conda activate python39_2
+> conda install -c conda-forge mamba
 ```
