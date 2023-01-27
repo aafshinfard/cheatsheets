@@ -161,8 +161,10 @@ Log of environments
 * btllib-dev:
 Developer-ready env for btllib
 ```bash
-> conda create --name btllib-dev
+> echo "conda-forge::mamba" >> x.txt
+> echo "bioconda::btllib" >> x.txt
+> conda create --name btllib-dev --file x.txt
 > conda activate btllib-dev
-> conda install -c conda-forge mamba
-> mamba install -c bioconda btllib
+> mamba install -c conda-forge meson ninja wheel llvm-openmp compilers
+> mamba install -c anaconda cmake pip 
 ```
