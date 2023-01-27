@@ -156,3 +156,13 @@ Log of environments
 > conda activate python39_2
 > conda install -c conda-forge mamba
 ```
+
+
+* btllib-dev:
+Developer-ready env for btllib
+```bash
+> conda create --name btllib-dev
+> conda activate btllib-dev
+> conda install -c conda-forge mamba
+> mamba install -c bioconda btllib
+```
