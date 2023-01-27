@@ -164,7 +164,9 @@ Developer-ready env for btllib
 > echo "conda-forge::mamba" >> x.txt
 > echo "bioconda::btllib" >> x.txt
 > conda create --name btllib-dev --file x.txt
+> rm x.txt
 > conda activate btllib-dev
 > mamba install -c conda-forge meson ninja wheel llvm-openmp compilers
-> mamba install -c anaconda cmake pip 
+> mamba install -c anaconda cmake pip swig 
+> 
 ```
