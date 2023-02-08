@@ -3,9 +3,9 @@ in the tests directory there is:
 ```
 ./test_installation.sh
 ```
-then I can run:
+That suggests that I can run:
 ```
-ntLink scaffold -B target=scaffolds_1.fa reads=long_reads_1.fa  w=250 -n
+../ntLink scaffold -B target=scaffolds_1.fa reads=long_reads_1.fa  w=250 -n
 ```
 for the full pipeline, but I can also run the following to only generating up tp the dot file:
 
