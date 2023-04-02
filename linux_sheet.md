@@ -1,4 +1,4 @@
-## Linux cheatsheet by Amirosen (Amirhossein Afshinfard)
+## Linux cheatsheet
 ## This document is being updated and is not organised in a clean/rationale order
 
 ######################################################
