@@ -4,7 +4,8 @@
 git clone git@github.com:bcgsc/physlr.git
 conda_env physlr_ready // dependencies for compiling
 cd physlr/src
-conda_env 
+conda_env physlrpy3.7
+// prepare for runs by adding more stuff like bttlib/indexlr to path
 ```
 
 
