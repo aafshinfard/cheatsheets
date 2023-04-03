@@ -1,4 +1,16 @@
 # Physlr
+## Setup Physlr
+```
+git clone git@github.com:bcgsc/physlr.git
+conda_env physlr_ready // dependencies for compiling
+cd physlr/src
+conda_env 
+```
+
+
+
+## Runs:
+
 
 Directory:
 ```
@@ -6,9 +18,10 @@ Directory:
 ```
 
 Conda env:
-physlrpy3.7
+physlrpy3.7 or physlr_ready
 ```
 conda_env physlrpy3.7
+conda_env physlr_ready // (python 3.9)
 ```
 
 Additional packages added to path:
