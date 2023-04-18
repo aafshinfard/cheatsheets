@@ -37,3 +37,9 @@ example command:
 
 ../bin/physlr-make physical-map lr=reads.32X ref=chm13v2.0_noY_noM protocol=ont m=95 t=24 > log_32X_chm13_ont_t24_m95.log 2>&1
 ```
+
+## Results processing:
+add "," every 3 digit, and also split columns with |
+```
+sed -E ':a;s/([0-9]+)([0-9]{3})/\1,\2/g;ta;s/\t/|/g' filename.map-quality.tsv
+```
