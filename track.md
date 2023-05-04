@@ -46,6 +46,9 @@ sed -E ':a;s/([0-9]+)([0-9]{3})/\1,\2/g;ta;s/\t/|/g' filename.map-quality.tsv
 
 ## Scaffolding stage with RLE - to hack to apply the joins on the non-RLE assembly:
 
+../bin/physlr-make scaffolds lr=reads.63X.rle draft=goldrush-chm13.rle ref=chm13v2.0_noY_noM.rle protocol=ont m=85 t=48 > log_scaffolds_rle-default.log 2>&1
+
+```
 ../bin/physlr-make scaffolds lr=reads.63X.rle draft=goldrush-chm13.rle ref=chm13v2.0_noY_noM.rle protocol=ont m=85 t=48 -n
 indexlr --long -t48 -k40 -w32 -r reads.63X.rle.k40.bf --pos -o goldrush-chm13.rle.k40-w32.physlr.tsv goldrush-chm13.rle.fa
 command time -v -o reads.63X.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m85.mol.backbone.map-split.goldrush-chm13.rle.n10.bed.time env PYTHONPATH=/projects/btl_scratch/aafshinfard/projects/physlr2/experiments/chm13_guppy_v5/rle_data/default_physlr1_63X_fake_m85 pypy3 /projects/btl_scratch/aafshinfard/projects/physlr2/experiments/chm13_guppy_v5/rle_data/default_physlr1_63X_fake_m85/bin/physlr map --mx-type split --map-pos 10 -V1 -n10 reads.63X.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m85.mol.backbone.path reads.63X.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m85.mol.split.tsv goldrush-chm13.rle.k40-w32.physlr.tsv >reads.63X.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m85.mol.backbone.map-split.goldrush-chm13.rle.n10.bed
@@ -63,3 +66,4 @@ command time -v -o reads.63X.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m85.mol.b
 ln -sf reads.63X.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m85.mol.backbone.map-split.goldrush-chm13.rle.n10.sort.best.bed.path.fa goldrush-chm13.rle.physlr.fa
 quast-lg -t48 -es --fast --large --scaffold-gap-max-size 100000 --min-identity 95 -R chm13v2.0_noY_noM.rle/chm13v2.0_noY_noM.rle.fa -o goldrush-chm13.rle.physlr.quast goldrush-chm13.rle.physlr.fa
 cp goldrush-chm13.rle.physlr.quast/transposed_report.tsv goldrush-chm13.rle.physlr.quast.tsv
+```
