@@ -52,7 +52,8 @@ reads="../na24143_2x250/1_1.fq.gz ../na24143_2x250/1_2.fq.gz"
 
 Quast:
 ```bash
-conda_env ENV_NAME # ENV_NAME an environment with quast 
+conda_env ENV_NAME # ENV_NAME an environment with quast
+conda_env deepcut # works fine
 ref=
 fasta=
 # Lauren's command, standard in the lab:
