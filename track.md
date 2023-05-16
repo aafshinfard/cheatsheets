@@ -69,3 +69,15 @@ ln -sf reads.63X.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m85.mol.backbone.map-
 quast-lg -t48 -es --fast --large --scaffold-gap-max-size 100000 --min-identity 95 -R chm13v2.0_noY_noM.rle/chm13v2.0_noY_noM.rle.fa -o goldrush-chm13.rle.physlr.quast goldrush-chm13.rle.physlr.fa
 cp goldrush-chm13.rle.physlr.quast/transposed_report.tsv goldrush-chm13.rle.physlr.quast.tsv
 ```
+
+# arcs for long reads of Physlr:
+two steps:
+1- generate psuedo long reads using arcs-make:
+```
+arcs-make arks-long reads.63X.rle.cut4.fq.gz draft=chm13v2.0_noY_noM.rle reads=reads.63X.rle cut=4 t=16
+```
+then run like before, obviously with the new read file, and also with new parameters:
+```
+ADD from Physlr-make
+``
+MAKE SURE YOU ONLY USE THIS FILE FOR THE RIGHT STAGES! PHYSLR MAY NEED READ FILE AGAIN AND AGAIN?!
