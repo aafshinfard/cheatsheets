@@ -28,7 +28,7 @@ conda env create -f environment.yml
 ```
 # install mamba in your base env:
 conda install mamba -n base -c conda-forge
-# now, type mamba instead conda for all create and install commands
+# now, type mamba instead of conda for all create and install commands
 mamba env create -f SOURCE.yml
 ```
 ## List 1: 
