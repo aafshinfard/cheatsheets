@@ -64,6 +64,8 @@ cat quast_${ref}_${fasta}/transposed_report.tsv |  mlr --tsv cut -o -f Assembly,
 
 cat quast_${fasta}/transposed_report.tsv |  mlr --tsv cut -o -f Assembly,NG50,NGA50,"# misassemblies","# local misassemblies","Genome fraction (%)","Duplication ratio","Total length","Unaligned length","# unaligned contigs"| sed 's/\t/|/g' | sed 's/^/|/g' | sed 's/$/|/g'
 
+cat quast__${ref}__${fasta}/transposed_report.tsv |  mlr --tsv cut -o -f Assembly,NG50,NGA50,"# misassemblies","# local misassemblies","Genome fraction (%)","Duplication ratio","Total length","Unaligned length","# unaligned contigs"| sed 's/\t/|/g' | sed 's/^/|/g' | sed 's/$/|/g'
+
 # More
 
 quast -t48 -es --fast --large --scaffold-gap-max-size 100000 --min-identity 95 -R ${ref} -o ${file}.quast ${file}.fa
