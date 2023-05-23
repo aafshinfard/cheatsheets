@@ -69,6 +69,10 @@ ln -sf reads.63X.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m85.mol.backbone.map-
 quast-lg -t48 -es --fast --large --scaffold-gap-max-size 100000 --min-identity 95 -R chm13v2.0_noY_noM.rle/chm13v2.0_noY_noM.rle.fa -o goldrush-chm13.rle.physlr.quast goldrush-chm13.rle.physlr.fa
 cp goldrush-chm13.rle.physlr.quast/transposed_report.tsv goldrush-chm13.rle.physlr.quast.tsv
 ```
+# Make a new folder with contents of a run that is done already
+cp -a physlr-to-copy destination_dir # (default_physlr1_63X_fake_m75_non-rle)
+ls -rt default_physlr1_63X_fake_m75/data/ | xargs -I {} ln -s $(realpath default_physlr1_63X_fake_m75/data/{}) default_physlr1_63X_fake_m75_non-rle/data//{}
+
 
 # arcs for long reads of Physlr:
 two steps:
