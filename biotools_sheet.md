@@ -64,7 +64,7 @@ cat quast_${ref}_${fasta}/transposed_report.tsv |  mlr --tsv cut -o -f Assembly,
 
 cat quast_${fasta}/transposed_report.tsv |  mlr --tsv cut -o -f Assembly,NG50,NGA50,"# misassemblies","# local misassemblies","Genome fraction (%)","Duplication ratio","Total length","Unaligned length","# unaligned contigs"| sed 's/\t/|/g' | sed 's/^/|/g' | sed 's/$/|/g'
 
-cat quast__${ref}__${fasta}/transposed_report.tsv |  mlr --tsv cut -o -f Assembly,NG50,NGA50,"# misassemblies","# local misassemblies","Genome fraction (%)","Duplication ratio","Total length","Unaligned length","# unaligned contigs"| sed 's/\t/|/g' | sed 's/^/|/g' | sed 's/$/|/g'
+cat quast__${ref}__${fasta}/transposed_report.tsv |  mlr --tsv cut -o -f Assembly,NG50,NGA50,"# misassemblies","# local misassemblies","Genome fraction (%)","Duplication ratio","Total length","Unaligned length","# unaligned contigs"| sed 's/\t/|/g' | sed 's/^/|/g' | sed -E ':a;s/([0-9]+)([0-9]{3}\>)/\1,\2/g;ta'
 
 # More
 
