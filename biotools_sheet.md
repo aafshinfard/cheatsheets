@@ -59,6 +59,11 @@ fasta=
 # Lauren's command, standard in the lab:
 quast -t48 -o quast__${ref}__${fasta} -r ${ref} --fast --large --scaffold-gap-max-size 100000  --min-identity 80 --split-scaffolds ${fasta} #wth the correct installation of quast (conda_env deepcut)
 
+quast-lg -t48 -es --fast --large --scaffold-gap-max-size 100000 --min-identity 80 --split-scaffolds -R ${ref} -o quast_${fasta}_${ref}_quast ${fasta}
+minimap2 --version > quast_${fasta}_${ref}_quast ${fasta}/minimap2.version
+quast --version > quast_${fasta}_${ref}_quast ${fasta}/quast.version
+
+
 # retrieve quast results
 cat quast_${ref}_${fasta}/transposed_report.tsv |  mlr --tsv cut -o -f Assembly,NG50,NGA50,"# misassemblies","# local misassemblies","Genome fraction (%)","Duplication ratio","Total length","Unaligned length","# unaligned contigs"| sed 's/\t/|/g' | sed 's/^/|/g' | sed 's/$/|/g'
 
