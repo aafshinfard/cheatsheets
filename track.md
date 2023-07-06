@@ -76,6 +76,11 @@ cp -a physlr-to-copy destination_dir # (default_physlr1_63X_fake_m75_non-rle)
 ls -rt default_physlr1_63X_fake_m75/data/ | xargs -I {} ln -s $(realpath default_physlr1_63X_fake_m75/data/{}) default_physlr1_63X_fake_m75_non-rle/data//{}
 ```
 
+# Filter a bed file for new and old scores
+```
+awk -F'\t' '($7 > 90) && ($5 > 3000) { printf "%s\t%s\t%s\t%s\t%d\t%s\n", $1, $2, $3, $4, int($7), $6 }' reads.63X.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m75.mol.backbone.map-split.goldrush-chm13.split-2mb.rle.n10.bed.BAK >reads.63X.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m75.mol.backbone.map-split.goldrush-chm13.split-2mb.rle.n10.bed
+```
+
 # arcs for long reads of Physlr:
 two steps:
 1- generate psuedo long reads using arcs-make:
