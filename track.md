@@ -37,6 +37,8 @@ example command:
 
 ../bin/physlr-make physical-map lr=reads.32X ref=chm13v2.0_noY_noM protocol=ont m=95 t=24 > log_32X_chm13_ont_t24_m95.log 2>&1
 
+../bin/physlr-make physical-map lr=reads.63X.rle ref=chm13v2.0_noY_noM protocol=ont t=48 m=70 > log_63X.rle_m70.log 2>&1
+
 > log_16X_chm13_ont_t24_m10.log 2>&1
 ```
 
