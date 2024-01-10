@@ -50,6 +50,12 @@ reads="../na24143_2x250/1_1.fq.gz ../na24143_2x250/1_2.fq.gz"
 
 ```
 
+Dataset stats using abyss-fac:
+```bash
+dataset=
+nohup abyss-fac -t0 ${dataset} > ${dataset}.abyss-fac.tsv &
+```bash
+
 Quast:
 ```bash
 conda_env ENV_NAME # ENV_NAME an environment with quast
