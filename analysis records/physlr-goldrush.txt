@@ -1,0 +1,27 @@
+
+# working directory
+cd /projects/btl_scratch/aafshinfard/projects/physlr2/
+git clone git@github.com:bcgsc/physlr.git physlr-dev-test-goldrush-temp
+cd physlr-dev-test-goldrush-temp/data
+
+# input read dataset
+ln -s /projects/btl/datasets/hprc/HG01243/nanopore/HG01243.fq
+
+# homopolymer compress the input
+../bin/physlr-make HG01243.hpc.fq -n
+
+# run physlr for hpc
+../bin/physlr-make HG01243.hpc.fq -n
+
+
+
+
+
+
+################ non-hpce run
+cd /projects/btl_scratch/aafshinfard/projects/physlr2/experiments/hg01243/physlr1/non-hpc
+cd data
+
+# input read dataset
+ln -s /projects/btl/datasets/hprc/HG01243/nanopore/HG01243.fq
+
