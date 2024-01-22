@@ -2,26 +2,47 @@
 # working directory
 cd /projects/btl_scratch/aafshinfard/projects/physlr2/
 git clone git@github.com:bcgsc/physlr.git physlr-dev-test-goldrush-temp
-cd physlr-dev-test-goldrush-temp/data
+cd physlr-dev-test-goldrush-temp/src/
+# ORRR: #### source files compiled already:
+cp -a /projects/btl_scratch/aafshinfard/projects/physlr2/src-read-to-copy /projects/btl_scratch/aafshinfard/projects/physlr2/physlr-dev-test-goldrush-temp/src
+#############
+conda_env btl_amir # to compile physlr alrighty (fix later to include in the same conda env possibly, but not necessary)make install
+conda_env physlrpy3.7 # back to physlrpy3.7
+
+cd ../data
 
 # input read dataset
-ln -s /projects/btl/datasets/hprc/HG01243/nanopore/HG01243.fq
+ln -s /projects/btl/datasets/hprc/HG01243/nanopore/HG01243.fq.gz
 
 # homopolymer compress the input
-../bin/physlr-make HG01243.hpc.fq -n
+../bin/physlr-make HG01243.hpc.fq 
 
-# run physlr for hpc
-../bin/physlr-make HG01243.hpc.fq -n
+# then move it to a dataset directory and pigz compress and synmlink it
+...
+ln -s /projects/btl/datasets/hprc/HG01243/nanopore/HG01243.hpc.fq.gz
+
+mkdir grch38
+ln -s /projects/btl/reference_genomes/H_sapiens/GRCh38/GCA_000001405.15_GRCh38_genomic.chr-only.fa grch38/grch38.fa
+ln -s /projects/btl/reference_genomes/H_sapiens/GRCh38/GCA_000001405.15_GRCh38_genomic.chr-only.fa grch38.fa
+ln -s /projects/btl/reference_genomes/H_sapiens/GRCh38/GCA_000001405.15_GRCh38_genomic.chr-only.fa.fai grch38/grch38.fa.fai
 
 
+# run physlr 
 
 
 
 
 ################ non-hpce run
-cd /projects/btl_scratch/aafshinfard/projects/physlr2/experiments/hg01243/physlr1/non-hpc
-cd data
+p -a /projects/btl_scratch/aafshinfard/projects/physlr2/src-read-to-copy /projects/btl_scratch/aafshinfard/projects/physlr2/experiments/hg01243/physlr1/non-hpc/src
+cd /projects/btl_scratch/aafshinfard/projects/physlr2/experiments/hg01243/physlr1/non-hpc/data
 
 # input read dataset
-ln -s /projects/btl/datasets/hprc/HG01243/nanopore/HG01243.fq
+ln -s ln -s /projects/btl/datasets/hprc/HG01243/nanopore/HG01243.fq.gz
 
+mkdir grch38
+ln -s /projects/btl/reference_genomes/H_sapiens/GRCh38/GCA_000001405.15_GRCh38_genomic.chr-only.fa grch38/grch38.fa
+ln -s /projects/btl/reference_genomes/H_sapiens/GRCh38/GCA_000001405.15_GRCh38_genomic.chr-only.fa grch38.fa
+ln -s /projects/btl/reference_genomes/H_sapiens/GRCh38/GCA_000001405.15_GRCh38_genomic.chr-only.fa.fai grch38/grch38.fa.fai
+
+../bin/physlr-make physical-map lr=HG01243 ref=grch38 protocol=long t=48 -n
+../bin/physlr-make physical-map lr=HG01243 ref=grch38 protocol=long t=48
