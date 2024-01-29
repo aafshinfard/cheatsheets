@@ -1,0 +1,50 @@
+# env
+conda_env physlrpy3.7
+
+# dir
+cd /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/
+
+# datasets
+cd datasets
+mkdir hg02055 hg01243 hg002 chm13
+ln -s /projects/btl/datasets/hprc/HG02055/nanopore/HG02055.fq.gz hg02055/
+ln -s /projects/btl/datasets/hprc/HG01243/nanopore/HG01243.fq.gz hg01243/
+ln -s /projects/btl/datasets/hsapiens/giab/AshkenazimTrio/HG002_NA24385_son/nanopore/gm_2023.01_kit14_dorado/hg002.pass.cram.fq hg002/HG002.fq
+ln -s /projects/btl/datasets/hsapiens/CHM13_ONT_T2T-rel8-guppy5.0.7/reads.63X.fq.gz chm13/CHM13.fq.gz
+
+which abyss-fac
+# result: /projects/btl/lcoombe/linuxbrew/bin/abyss-fac
+
+cd hg02055/
+nohup abyss-fac -t0 HG02055.fq.gz &> HG02055.fq.gz.abyssfac.tsv &
+
+cd ../hg01243
+nohup abyss-fac -t0 HG01243.fq.gz &> HG01243.fq.gz.abyssfac.tsv &
+
+cd ../hg002 
+nohup abyss-fac -t0 HG002.fq &> HG002.fq.abyssfac.tsv &
+
+cd ../chm13
+nohup abyss-fac -t0 CHM13.fq.gz &> CHM13.fq.gz.abyssfac.tsv &
+
+
+# run Physlr to generate HPC and RLE read datasets
+git clone git@github.com:bcgsc/physlr.git physlr_to_run_hpc_and_rle
+cd physlr_to_run_hpc_and_rle
+git checkout goldrush
+
+cd hg02055/
+nohup pypy3 ../physlr_to_run_hpc_and_rle/physlr/hpc.py -i HG02055.fq.gz -o HG02055.rle.fq -b 10000 &
+../physlr_to_run_hpc_and_rle/bin/physlr-make HG02055.hpc.fq.gz lr=HG02055 &
+
+cd ../hg01243
+nohup pypy3 ../physlr_to_run_hpc_and_rle/physlr/hpc.py -i HG01243.fq.gz -o HG01243.rle.fq -b 10000 &
+../physlr_to_run_hpc_and_rle/bin/physlr-make HG01243.hpc.fq.gz lr=HG01243 &
+
+cd ../hg002
+nohup pypy3 ../physlr_to_run_hpc_and_rle/physlr/hpc.py -i HG002.fq -o HG002.rle.fq -b 10000 &
+../physlr_to_run_hpc_and_rle/bin/physlr-make HG002.hpc.fq.gz lr=HG002 &
+
+cd ../chm13
+nohup pypy3 ../physlr_to_run_hpc_and_rle/physlr/hpc.py -i CHM13.fq.gz -o CHM13.rle.fq -b 10000 &
+../physlr_to_run_hpc_and_rle/bin/physlr-make CHM13.hpc.fq.gz lr=CHM13 &
