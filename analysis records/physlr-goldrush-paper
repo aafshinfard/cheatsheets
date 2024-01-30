@@ -40,18 +40,22 @@ git checkout goldrush
 
 cd hg02055/
 nohup pypy3 ../physlr_to_run_hpc_and_rle/physlr/hpc.py -i HG02055.fq.gz -o HG02055.rle.fq -b 10000 &
+pigz HG02055.rle.fq
 ../physlr_to_run_hpc_and_rle/bin/physlr-make HG02055.hpc.fq.gz lr=HG02055 &
 
 cd ../hg01243
 nohup pypy3 ../physlr_to_run_hpc_and_rle/physlr/hpc.py -i HG01243.fq.gz -o HG01243.rle.fq -b 10000 &
+pigz HG01243.rle.fq
 ../physlr_to_run_hpc_and_rle/bin/physlr-make HG01243.hpc.fq.gz lr=HG01243 &
 
 cd ../hg002
 nohup pypy3 ../physlr_to_run_hpc_and_rle/physlr/hpc.py -i HG002.fq -o HG002.rle.fq -b 10000 &
+pigz HG002.rle.fq
 ../physlr_to_run_hpc_and_rle/bin/physlr-make HG002.hpc.fq.gz lr=HG002 &
 
 cd ../chm13
 nohup pypy3 ../physlr_to_run_hpc_and_rle/physlr/hpc.py -i CHM13.fq.gz -o CHM13.rle.fq -b 10000 &
+pigz CHM13.rle.fq
 ../physlr_to_run_hpc_and_rle/bin/physlr-make CHM13.hpc.fq.gz lr=CHM13 &
 
 
@@ -75,3 +79,67 @@ ln -s /projects/btl/datasets/hsapiens/CHM13_T2T_assemblies/v2.0/chm13v2.0_noY.fa
 
 awk ' NR%2 == 0 {sum+=length} END {print sum}' grch38.fa
 awk '!/^>/ { sum += length($0) } END { print sum }' chm13v2.0_noY.fa
+
+cd ../
+
+git clone git@github.com:bcgsc/physlr.git physlr-src-code-goldrush
+cd physlr-src-code-goldrush/src/
+make install # it probably wont work in this conda env. need to fix it later. For now I copied the src codes from another directory.
+
+cd ../data
+
+ln -s /projects/btl/reference_genomes/H_sapiens/GRCh38/GCA_000001405.15_GRCh38_genomic.chr-only.fa grch38.fa
+ln -s /projects/btl/datasets/hsapiens/CHM13_T2T_assemblies/v2.0/chm13v2.0_noY.fa
+
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/datasets/hg02055/HG02055.fq.gz
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/datasets/hg02055/HG02055.hpc.fq.gz
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/datasets/hg02055/HG02055.rle.fq.gz
+
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/datasets/hg01243/HG01243.fq.gz
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/datasets/hg01243/HG01243.hpc.fq.gz
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/datasets/hg01243/HG01243.rle.fq.gz
+
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/datasets/hg002/HG002.fq.gz
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/datasets/hg002/HG002.hpc.fq.gz
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/datasets/hg002/HG002.rle.fq.gz
+
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/datasets/chm13/CHM13.fq.gz
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/datasets/chm13/CHM13.hpc.fq.gz
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/datasets/chm13/CHM13.rle.fq.gz
+
+cd ../../
+
+mkdir hg01243/physlr/
+mkdir hg01243/physlr_hpc/
+mkdir hg01243/physlr_rle/
+
+cp -a physlr-src-code-goldrush hg01243/physlr/default
+cp -a physlr-src-code-goldrush hg01243/physlr/m95
+cp -a physlr-src-code-goldrush hg01243/physlr/m90
+cp -a physlr-src-code-goldrush hg01243/physlr/m85
+
+
+mkdir hg01243/physlr/
+mkdir hg01243/physlr_hpc/
+mkdir hg01243/physlr_rle/
+
+mkdir hg01243/physlr/default
+mkdir hg01243/physlr/m95
+mkdir hg01243/physlr/m90
+mkdir hg01243/physlr/m85
+mkdir hg01243/physlr/m80
+
+mkdir hg01243/physlr/
+mkdir hg01243/physlr/default
+mkdir hg01243/physlr/m95
+mkdir hg01243/physlr/m90
+mkdir hg01243/physlr/m85
+mkdir hg01243/physlr/m80
+
+mkdir hg01243/physlr/
+mkdir hg01243/physlr/default
+mkdir hg01243/physlr/m95
+mkdir hg01243/physlr/m90
+mkdir hg01243/physlr/m85
+mkdir hg01243/physlr/m80
+
