@@ -17,15 +17,20 @@ which abyss-fac
 
 cd hg02055/
 nohup abyss-fac -t0 HG02055.fq.gz &> HG02055.fq.gz.abyssfac.tsv &
-
 cd ../hg01243
 nohup abyss-fac -t0 HG01243.fq.gz &> HG01243.fq.gz.abyssfac.tsv &
-
 cd ../hg002 
 nohup abyss-fac -t0 HG002.fq &> HG002.fq.abyssfac.tsv &
-
 cd ../chm13
 nohup abyss-fac -t0 CHM13.fq.gz &> CHM13.fq.gz.abyssfac.tsv &
+cd ../hg02055/
+nohup abyss-fac HG02055.fq.gz &> HG02055.fq.gz.abyssfac500.tsv &
+cd ../hg01243
+nohup abyss-fac HG01243.fq.gz &> HG01243.fq.gz.abyssfac500.tsv &
+cd ../hg002 
+nohup abyss-fac HG002.fq &> HG002.fq.abyssfac500.tsv &
+cd ../chm13
+nohup abyss-fac CHM13.fq.gz &> CHM13.fq.gz.abyssfac500.tsv &
 
 
 # run Physlr to generate HPC and RLE read datasets
@@ -48,3 +53,25 @@ nohup pypy3 ../physlr_to_run_hpc_and_rle/physlr/hpc.py -i HG002.fq -o HG002.rle.
 cd ../chm13
 nohup pypy3 ../physlr_to_run_hpc_and_rle/physlr/hpc.py -i CHM13.fq.gz -o CHM13.rle.fq -b 10000 &
 ../physlr_to_run_hpc_and_rle/bin/physlr-make CHM13.hpc.fq.gz lr=CHM13 &
+
+
+
+# Print abyss-fac results
+sed 's/\s\+/|/g' hg02055/HG02055.fq.gz.abyssfac.tsv | sed -E ':a;s/([0-9]+)([0-9]{3}\>)/\1,\2/g;ta'
+sed 's/\s\+/|/g' hg01243/HG01243.fq.gz.abyssfac.tsv | sed -E ':a;s/([0-9]+)([0-9]{3}\>)/\1,\2/g;ta'
+sed 's/\s\+/|/g' hg002/HG002.fq.abyssfac.tsv | sed -E ':a;s/([0-9]+)([0-9]{3}\>)/\1,\2/g;ta'
+sed 's/\s\+/|/g' chm13/CHM13.fq.gz.abyssfac.tsv | sed -E ':a;s/([0-9]+)([0-9]{3}\>)/\1,\2/g;ta'
+
+sed 's/\s\+/|/g' hg02055/HG02055.fq.gz.abyssfac500.tsv | sed -E ':a;s/([0-9]+)([0-9]{3}\>)/\1,\2/g;ta'
+sed 's/\s\+/|/g' hg01243/HG01243.fq.gz.abyssfac500.tsv | sed -E ':a;s/([0-9]+)([0-9]{3}\>)/\1,\2/g;ta'
+sed 's/\s\+/|/g' hg002/HG002.fq.abyssfac500.tsv | sed -E ':a;s/([0-9]+)([0-9]{3}\>)/\1,\2/g;ta'
+sed 's/\s\+/|/g' chm13/CHM13.fq.gz.abyssfac500.tsv | sed -E ':a;s/([0-9]+)([0-9]{3}\>)/\1,\2/g;ta'
+
+cd ../
+mkdir refs
+cd refs/
+ln -s /projects/btl/reference_genomes/H_sapiens/GRCh38/GCA_000001405.15_GRCh38_genomic.chr-only.fa grch38.fa
+ln -s /projects/btl/datasets/hsapiens/CHM13_T2T_assemblies/v2.0/chm13v2.0_noY.fa
+
+awk ' NR%2 == 0 {sum+=length} END {print sum}' grch38.fa
+awk '!/^>/ { sum += length($0) } END { print sum }' chm13v2.0_noY.fa
