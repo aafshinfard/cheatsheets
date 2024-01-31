@@ -110,36 +110,14 @@ ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experimen
 cd ../../
 
 mkdir hg01243/physlr/
-mkdir hg01243/physlr_hpc/
-mkdir hg01243/physlr_rle/
 
-cp -a physlr-src-code-goldrush hg01243/physlr/default
-cp -a physlr-src-code-goldrush hg01243/physlr/m95
-cp -a physlr-src-code-goldrush hg01243/physlr/m90
-cp -a physlr-src-code-goldrush hg01243/physlr/m85
+cp -a physlr-src-code-goldrush/ hg01243/physlr/default
+cp -a physlr-src-code-goldrush/ hg01243/physlr/m95
+cp -a physlr-src-code-goldrush/ hg01243/physlr/m90
+cp -a physlr-src-code-goldrush/ hg01243/physlr/m85
 
+cp -a hg01243/physlr/ hg01243/physlr_hpc
+cp -a hg01243/physlr/ hg01243/physlr_rle
 
-mkdir hg01243/physlr/
-mkdir hg01243/physlr_hpc/
-mkdir hg01243/physlr_rle/
-
-mkdir hg01243/physlr/default
-mkdir hg01243/physlr/m95
-mkdir hg01243/physlr/m90
-mkdir hg01243/physlr/m85
-mkdir hg01243/physlr/m80
-
-mkdir hg01243/physlr/
-mkdir hg01243/physlr/default
-mkdir hg01243/physlr/m95
-mkdir hg01243/physlr/m90
-mkdir hg01243/physlr/m85
-mkdir hg01243/physlr/m80
-
-mkdir hg01243/physlr/
-mkdir hg01243/physlr/default
-mkdir hg01243/physlr/m95
-mkdir hg01243/physlr/m90
-mkdir hg01243/physlr/m85
-mkdir hg01243/physlr/m80
-
+# Make sure physlr conda env is active, and then run Physlr filter-reads
+../bin/physlr-make filter-reads lr=HG01243 protocol=long t=48 
