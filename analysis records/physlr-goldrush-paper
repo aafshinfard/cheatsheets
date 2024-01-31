@@ -138,6 +138,7 @@ git pull
 
 cd hg01243/physlr_hpc/default/data
 git pull
+touch HG01243.hpc.fq.gz
 ../bin/physlr-make filter-reads lr=HG01243.hpc protocol=long t=48 > log_HG01243_hpc.log 2>&1
 
 cd hg01243/physlr_hpc/m95/data
