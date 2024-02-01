@@ -130,17 +130,8 @@ git pull
 
 cd hg01243/physlr_rle/default/data
 git pull
-../bin/physlr-make filter-reads lr=HG01243.rle protocol=long t=48 > log_HG01243_rle.log 2>&1
+../bin/physlr-make filter-reads lr=HG01243 lr2=HG01243.rle protocol=long t=48 > log_HG01243_rle.log 2>&1
 
 cd hg01243/physlr_rle/m95/data
 git pull
-../bin/physlr-make filter-reads lr=HG01243.rle protocol=long t=48 m=95 > log_HG01243_m95.log 2>&1
-
-cd hg01243/physlr_hpc/default/data
-git pull
-touch HG01243.hpc.fq.gz
-../bin/physlr-make filter-reads lr=HG01243.hpc protocol=long t=48 > log_HG01243_hpc.log 2>&1
-
-cd hg01243/physlr_hpc/m95/data
-git pull
-../bin/physlr-make filter-reads lr=HG01243.hpc protocol=long t=48 m=95 > log_HG01243_m95.log 2>&1
+../bin/physlr-make filter-reads lr=HG01243 lr2=HG01243.rle protocol=long t=48 m=95 > log_HG01243_m95.log 2>&1
