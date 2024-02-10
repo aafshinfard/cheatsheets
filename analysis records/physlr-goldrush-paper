@@ -142,7 +142,9 @@ git pull
 
 
 ## Read analysis
-awk 'NR%4 == 2 {print length}' ${dataset}.d1.fq > HG01243.d1.fq.read_length
-awk 'NR%4 == 2 {print length}' ${dataset}.d2.fq > HG01243.d2.fq.read_length
-awk 'NR%4 == 2 {print length}' ${dataset}.d4.fq > HG01243.d4.fq.read_length
+dataset=HG01243
+awk 'NR%4 == 2 {print length}' ${dataset}.d1.fq > ${dataset}.d1.fq.read_length
+awk 'NR%4 == 2 {print length}' ${dataset}.d2.fq > ${dataset}.d2.fq.read_length
+awk 'NR%4 == 2 {print length}' ${dataset}.d4.fq > ${dataset}.d4.fq.read_length
+
 # then used python to plot
