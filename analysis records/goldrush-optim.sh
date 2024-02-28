@@ -37,7 +37,7 @@ command time -v -o time.goldrush-run.time goldrush run reads=${reads} G=3e9 t=$t
 conda_env deepcut
 
 goldrush=$(ls -t *fa | head -n1)
-[[ $goldrush == "grch38.fa" ]] && goldrush="none.fa"
+[[ ${goldrush} == "grch38.fa" ]] && goldrush="none.fa"
 ln -s ${goldrush} goldrush.fa
 
 fasta=goldrush.fa
