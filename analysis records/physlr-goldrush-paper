@@ -232,3 +232,15 @@ quast --version > quast_${fasta}_${ref}_quast/quast.version
 cat quast_${fasta}_${ref}_quast/transposed_report.tsv |  mlr --tsv cut -o -f Assembly,NG50,NGA50,"# misassemblies","# local misassemblies","Genome fraction (%)","Duplication ratio","Total length","Unaligned length","# unaligned contigs","# N's per 100 kbp","# mismatches per 100 kbp","# indels per 100 kbp"| sed 's/\t/|/g' | sed 's/^/|/g' | sed -E ':a;s/([0-9]+)([0-9]{3}\>)/\1,\2/g;ta' > quast_${fasta}_${ref}_quast.tsv
 cat quast_${fasta}_${ref}_quast.tsv
 
+
+
+
+
+# checking minimizers counts and plotting against length of reads
+# see what physlr command to run
+../bin/physlr-make reads.63X.20k.rle.k40-w32.n100-1000.physlr.tsv.gz lr=HG02055.rle lr2=HG02055 protocol=long t=35 m=85 -n
+# physlr command run manually
+pigz -p35 -cd reads.63X.20k.rle.k40-w32.physlr.tsv.gz | command time -v -o reads.63X.20k.rle.k40-w32.n100-100000.physlr.tsv.gz.time /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/p
+aper_experiments/chm13/physlr_20k_rle/physlr_rle_default/src/physlr-filter-barcodes -n100 -N100000 - | pigz -p35 >reads.63X.20k.rle.k40-w32.n100-100000.physlr.tsv.gz
+# now convert to mx count per read
+pigz -dc reads.63X.20k.rle.k40-w32.n100-50000.physlr.tsv.gz | awk '{print $1 "\t" (NF-1)}' | pigz > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz
