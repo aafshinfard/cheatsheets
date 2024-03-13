@@ -247,6 +247,7 @@ aper_experiments/chm13/physlr_20k_rle/physlr_rle_default/src/physlr-filter-barco
 pigz -dc reads.63X.20k.rle.k40-w32.n100-50000.physlr.tsv.gz | awk '{print $1 "\t" (NF-1)}' | pigz > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz
 
 # now get names of this reads
+pigz -dc reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz |  awk '{print $1}' > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz.readnames.tsv
 
 # now use names to filter the whole read set and then pipe into finding the read len for these reads
 seqtk subseq reads.63X.20k.fq reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz.readnames.tsv | awk 'NR%4==1 {read_name=$1} NR%4==2 {printf "%s\t%s\n", read_name, length($0)}' > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz.readnames.read_len.tsv
