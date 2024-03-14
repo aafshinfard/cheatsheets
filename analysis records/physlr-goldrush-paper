@@ -258,6 +258,6 @@ sort -k1,1 reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz.readname
 # sort the len file too
 sort -k1,1 reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.sorted.tsv
 # now merge the two files to have read len and number of mxs for each read to be able to plot..
-
+paste reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.sorted.tsv reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz.readnames_no-at.read_len.sorted.tsv > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv
 # add to this line whether this read will be filter in the current pipeline
 
