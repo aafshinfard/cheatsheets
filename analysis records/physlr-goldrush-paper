@@ -252,6 +252,11 @@ pigz -dc reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz |  awk '{p
 # now use names to filter the whole read set and then pipe into finding the read len for these reads
 seqtk subseq reads.63X.20k.fq reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz.readnames.tsv | awk 'NR%4==1 {read_name=$1} NR%4==2 {printf "%s\t%s\n", read_name, length($0)}' > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz.readnames.read_len.tsv
 
+# drop @ from read names in the file from reads and then sort the file based on column 1
+sed 's/^@//' reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz.readnames.read_len.tsv > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz.readnames_no-at.read_len.tsv
+sort -k1,1 reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz.readnames_no-at.read_len.tsv > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz.readnames_no-at.read_len.sorted.tsv
+# sort the len file too
+sort -k1,1 reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.sorted.tsv
 # now merge the two files to have read len and number of mxs for each read to be able to plot..
 
 # add to this line whether this read will be filter in the current pipeline
