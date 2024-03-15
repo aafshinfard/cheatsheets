@@ -259,5 +259,35 @@ sort -k1,1 reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz.readname
 sort -k1,1 reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.sorted.tsv
 # now merge the two files to have read len and number of mxs for each read to be able to plot..
 paste reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.sorted.tsv reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.tsv.gz.readnames_no-at.read_len.sorted.tsv > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv
-# add to this line whether this read will be filter in the current pipeline
 
+# add to this line whether this read will be filter in the current pipeline
+# now work on the overlap files to see if they're filtered later:
+# only the overlap file
+sed '1d' reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.tsv | awk 'NF == 3 {exit} NF == 2 {print $1}' | sort > reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.readnames.sorted.tsv
+# m-filtered overlap file
+sed '1d' reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.tsv | awk 'NF == 3 {exit} NF == 2 {print $1}' | sort > reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.readnames.sorted.tsv
+# after mol separation (also remove _ suffix)
+sed '1d' reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.mol.tsv | awk 'NF == 3 {exit} NF == 2 {print $1}' | awk -F, '{sub(/_.*/, "", $1); print}' | sort > reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.mol.readnames.sorted.tsv
+# now muli mol names
+uniq -d reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.mol.readnames.sorted.tsv > reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.mol.multi.readnames.sorted.tsv
+# ALSO tried: sed '1d' reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.mol.tsv | awk 'NF == 3 {exit} NF == 2 {print $1}' | awk -F, '$1 ~ /_1$/' | sort > reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.mol._1.readnames.sorted.tsv
+# SAME RESULT
+
+
+#### now filter and color plots
+# filter the main dataset to include only the reads that are in overlap.92.5.tsv file (overlap. file has same number of nodes):
+join -o 1.1,1.2,1.3,1.4 reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.readnames.sorted.tsv > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv_filtered_.physlr.overlap.m92.5.tsv
+# also keep those not present in overlap.92.5.tsv
+join -v1 -o 1.1,1.2,1.3,1.4 reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.readnames.sorted.tsv > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv_filtered.NOT_IN.physlr.overlap.m92.5.tsv
+
+# now from the filtered set, filter more to 
+join -o 1.1,1.2,1.3,1.4 reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv_filtered_.physlr.overlap.m92.5.tsv reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.mol.readnames.sorted.tsv > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv_filtered_.physlr.overlap.m92.5.mol.tsv
+# and those that are not
+join -v1 -o 1.1,1.2,1.3,1.4 reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv_filtered_.physlr.overlap.m92.5.tsv reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.mol.readnames.sorted.tsv > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv_filtered.NOT_IN.physlr.overlap.m92.5.mol.tsv
+
+# now get only those multi mol
+join -o 1.1,1.2,1.3,1.4 reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv_filtered_.physlr.overlap.m92.5.mol.tsv reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.mol.multi.readnames.sorted.tsv > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv_filtered_.physlr.overlap.m92.5.mol.multi.tsv
+join -v 1 -o 1.1,1.2,1.3,1.4 reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv_filtered_.physlr.overlap.m92.5.mol.tsv reads.63X.20k.rle.k40-w32.n100-5000.c2-x.physlr.overlap.m92.5.mol.multi.readnames.sorted.tsv > reads.63X.20k.rle.k40-w32.n100-50000.physlr.mxs-count.paste.len.sorted.tsv_filtered.NOT_IN.physlr.overlap.m92.5.mol.multi.tsv
+
+
+# now visualize in python
