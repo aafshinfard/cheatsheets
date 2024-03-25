@@ -139,6 +139,23 @@ git pull
 
 
 
+#### 
+#### Reads for Gldrush assembly runs
+cd /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/hg02055/physlr-goldrush/rle/m85
+
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/hg02055/physlr_rle/m85/data/HG02055.rle.physlr.mol.fq.gz
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/hg02055/physlr_rle/m85/data/HG02055.rle.physlr.mol.uniq.fq.gz
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/hg02055/physlr_rle/m85/data/HG02055.rle.physlr.HG02055.non-multi.fq.gz
+
+pigz -dc -p48 HG02055.rle.physlr.mol.uniq.fq.gz > HG02055.rle.physlr.mol.uniq.fq
+pigz -dc -p48 HG02055.rle.physlr.mol.fq.gz > HG02055.rle.physlr.mol.fq
+pigz -dc -p48 HG02055.rle.physlr.HG02055.non-multi.fq.gz > HG02055.rle.physlr.HG02055.non-multi.fq
+
+ln -s HG02055.rle.physlr.mol.uniq.fq HG02055.d1.fq
+ln -s HG02055.rle.physlr.mol.fq HG02055.d2.fq
+ln -s HG02055.rle.physlr.HG02055.non-multi.fq HG02055.d3.fq
+ln -s /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/paper_experiments/datasets/hg02055/HG02055.fq HG02055.d4.fq
+
 
 
 ## Read analysis
