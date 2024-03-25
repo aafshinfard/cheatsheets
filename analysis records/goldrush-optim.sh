@@ -128,3 +128,22 @@ conda_env goldrush
 
 ###
 # T289 record for chm13
+
+
+###### Changing the QUAST Script to Lauren's for consistency
+conda_env deepcut
+
+goldrush=$(ls -t *fa | head -n1)
+[[ ${goldrush} == "grch38.fa" ]] && goldrush="none.fa"
+ln -s ${goldrush} goldrush.fa
+ln -s /projects/btl/reference_genomes/H_sapiens/GRCh38/GCA_000001405.15_GRCh38_genomic.chr-only.fa grch38.fa
+
+fasta=goldrush.fa
+ref=grch38.fa
+
+quast -t 16 -o quast_${fasta}_${ref}_lauren -r ${ref} --fast --large --scaffold-gap-max-size 100000  --min-identity 80 --split-scaffolds ${fasta}
+minimap2 --version > quast_${fasta}_${ref}_lauren/minimap2.version
+quast --version > quast_${fasta}_${ref}_lauren/quast.version
+cat quast_${fasta}_${ref}_lauren/transposed_report.tsv |  mlr --tsv cut -o -f Assembly,NG50,NGA50,"# misassemblies","# local misassemblies","Genome fraction (%)","Duplication ratio","Total length","Unaligned length","# unaligned contigs","# N's per 100 kbp","# mismatches per 100 kbp","# indels per 100 kbp"| sed 's/\t/|/g' | sed 's/^/|/g' | sed -E ':a;s/([0-9]+)([0-9]{3}\>)/\1,\2/g;ta' > quast_${fasta}_${ref}_quast.tsv
+cat quast_${fasta}_${ref}_lauren.tsv
+
