@@ -255,6 +255,7 @@ cat quast_${fasta}_${ref}_quast.tsv
 
 # checking minimizers counts and plotting against length of reads
 # see what physlr command to run
+# NOW CHANGED TO A DIFF DIR (all reads, not 20k+)
 ../bin/physlr-make reads.63X.20k.rle.k40-w32.n100-1000.physlr.tsv.gz lr=HG02055.rle lr2=HG02055 protocol=long t=35 m=85 -n
 # physlr command run manually
 pigz -p35 -cd reads.63X.20k.rle.k40-w32.physlr.tsv.gz | command time -v -o reads.63X.20k.rle.k40-w32.n100-100000.physlr.tsv.gz.time /projects/btl_scratch/aafshinfard/projects/physlr-goldrush/p
